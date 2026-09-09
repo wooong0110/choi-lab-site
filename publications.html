@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Publications · KNU Drug Delivery Lab</title>
+<meta name="description" content="Selected publications from the KNU Drug Delivery Lab.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/img/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('choilab-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.lang=localStorage.getItem('choilab-language')==='ko'?'ko':'en'}catch(e){}</script>
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="index.html">
+      <img class="mark" src="assets/img/symbol.png" alt="Kyungpook National University symbol" width="34" height="34">
+      <span class="name">Drug Delivery Lab<small>Kyungpook National University</small></span>
+    </a>
+    <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="members.html">Members</a></li>
+      <li><a href="publications.html" class="active">Publications</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="hero" style="padding-bottom:0">
+  <div class="wrap" style="padding-bottom:64px">
+    <span class="eyebrow">Research Output</span>
+    <h1 style="font-size:clamp(30px,4.6vw,52px)">Selected <em>publications</em></h1>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="pub-note reveal">For the full list, see <a href="https://scholar.google.com/citations?user=IZrgQWMAAAAJ&hl=ko" target="_blank" rel="noopener" style="color:var(--primary);font-weight:600">Google Scholar</a>.</p>
+
+    <p class="pub-role-note reveal"><sup>*</sup> First or co-first author</p>
+
+    <!-- 논문은 여기에 직접 쓰지 않습니다. assets/js/publications-data.js 파일만 수정하세요. -->
+    <ul id="pub-list" class="pub-list"></ul>
+    <nav id="pub-pager" class="pager"></nav>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="name">KNU Drug Delivery Lab</div>
+        <p>Department of Immunology</p>
+        <p>School of Medicine</p>
+        <p>Kyungpook National University</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h5>Explore</h5>
+          <a href="index.html">Home</a>
+          <a href="members.html">Members</a>
+          <a href="publications.html">Publications</a>
+        </div>
+        <div class="footer-col">
+          <h5>Connect</h5>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Choi Lab · Kyungpook National University</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/publications-data.js"></script>
+<script src="assets/js/render-pubs.js"></script>
+</body>
+</html>
