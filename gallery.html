@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Contact · KNU Drug Delivery Lab</title>
-<meta name="description" content="Contact the KNU Drug Delivery Lab.">
+<title>Gallery · KNU Drug Delivery Lab</title>
+<meta name="description" content="News and photos from the KNU Drug Delivery Lab.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&display=swap" rel="stylesheet">
@@ -28,45 +28,33 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="members.html">Members</a></li>
       <li><a href="publications.html">Publications</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="contact.html" class="active">Contact</a></li>
+      <li><a href="gallery.html" class="active" aria-current="page">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
   </div>
 </header>
 
+<main>
 <section class="hero" style="padding-bottom:0">
   <div class="wrap" style="padding-bottom:64px">
-    <span class="eyebrow">Get in Touch</span>
-    <h1 style="font-size:clamp(30px,4.6vw,52px)">Come <em>join us</em></h1>
-    <p class="lead">We are always looking for motivated people to join our team. If you are interested in undergraduate internships or graduate research, feel free to reach out. ✨</p>
+    <span class="eyebrow">Lab Updates</span>
+    <h1 style="font-size:clamp(30px,4.6vw,52px)">Gallery</h1>
+    <p class="lead">News, milestones, and everyday moments from our lab.</p>
   </div>
 </section>
-
 <section>
   <div class="wrap">
-    <div class="contact-grid">
-      <div class="reveal">
-        <div class="contact-item">
-          <div class="ic">📧</div>
-          <div><div class="k">Email</div><div class="v"><a href="mailto:wooong0110@knu.ac.kr">wooong0110@knu.ac.kr</a></div></div>
-        </div>
-        <div class="contact-item">
-          <div class="ic">🏛️</div>
-          <div><div class="k">Address</div><div class="v">680 Gukchaebosang-ro, N241, Jung-gu,<br>Daegu, 41944, South Korea</div></div>
-        </div>
-        <div class="contact-item" style="border-bottom:0">
-          <div class="ic">🏫</div>
-          <div><div class="k">Affiliation</div><div class="v">Department of Immunology,<br>School of Medicine, Kyungpook National University</div></div>
-        </div>
-      </div>
-      <div class="map-card reveal">
-        <iframe
-          src="https://www.google.com/maps?q=Kyungpook+National+University+School+of+Medicine,+Gukchaebosang-ro,+Jung-gu,+Daegu&output=embed"
-          loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map"></iframe>
-      </div>
+    <!-- 소식과 사진은 assets/js/gallery-data.js에 추가하세요. -->
+    <div id="gallery-grid" class="news-grid"></div>
+    <div id="gallery-empty" class="gallery-empty" hidden>
+      <h2>Our stories are coming soon</h2>
+      <p>Stay tuned for news and photos from our lab.</p>
     </div>
+    <nav id="gallery-pager" class="pager" aria-label="Gallery pages"></nav>
+    <noscript>연구실 소식과 사진을 보려면 JavaScript를 활성화해 주세요. Enable JavaScript to view lab news and photos.</noscript>
   </div>
 </section>
+</main>
 
 <footer class="site-footer">
   <div class="wrap">
@@ -98,5 +86,7 @@
 </footer>
 
 <script src="assets/js/main.js"></script>
+<script src="assets/js/gallery-data.js"></script>
+<script src="assets/js/render-gallery.js"></script>
 </body>
 </html>

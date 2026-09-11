@@ -15,6 +15,11 @@
 
   // [source text, English, Korean]. Names and publication metadata stay unchanged.
   var TRANSLATIONS = [
+    ['Gallery', 'Gallery', '갤러리'],
+    ['Lab Updates', 'Lab Updates', '연구실 소식'],
+    ['News, milestones, and everyday moments from our lab.', 'News, milestones, and everyday moments from our lab.', '연구실의 새로운 소식과 성과, 함께하는 일상을 전합니다.'],
+    ['Our stories are coming soon', 'Our stories are coming soon', '곧 연구실 이야기를 전해드립니다'],
+    ['Stay tuned for news and photos from our lab.', 'Stay tuned for news and photos from our lab.', '연구실의 소식과 사진을 이곳에서 만나보세요.'],
     ['Drug Delivery Lab', 'Drug Delivery Lab', '약물전달 연구실'],
     ['KNU Drug Delivery Lab', 'KNU Drug Delivery Lab', '경북대학교 약물전달 연구실'],
     ['Kyungpook National University', 'Kyungpook National University', '경북대학교'],
@@ -102,6 +107,10 @@
     'publications.html': {
       en: ['Publications · KNU Drug Delivery Lab', 'Selected publications from the KNU Drug Delivery Lab.'],
       ko: ['논문 · 경북대학교 약물전달 연구실', '경북대학교 약물전달 연구실의 주요 연구 논문입니다.']
+    },
+    'gallery.html': {
+      en: ['Gallery · KNU Drug Delivery Lab', 'News and photos from the KNU Drug Delivery Lab.'],
+      ko: ['갤러리 · 경북대학교 약물전달 연구실', '경북대학교 약물전달 연구실의 소식과 사진을 전합니다.']
     },
     'contact.html': {
       en: ['Contact · KNU Drug Delivery Lab', 'Contact the KNU Drug Delivery Lab.'],

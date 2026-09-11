@@ -100,6 +100,29 @@ styles.css 맨 위 :root 의 색상 값만 조정하면 돼.
 
 ------------------------------------------------------------------------
 
+## 📷 Gallery에 연구실 소식·사진 올리기
+
+참고 사이트 News처럼 **대표 사진 + 날짜·제목 + 본문 + 추가 사진** 카드로 표시됩니다. PC에서는 2열, 모바일에서는 1열이며 10개씩 페이지가 나뉩니다.
+
+1. 사진을 `assets/img/gallery/` 폴더에 넣습니다. 파일명은 영문·숫자·하이픈을 권장합니다.
+2. AI에게 아래처럼 요청하거나 `assets/js/gallery-data.js`의 예시를 복사해 글을 추가합니다. 최신 글을 배열 맨 위에 넣으세요.
+3. `gallery.html`을 열어 확인하고, GitHub Desktop에서 Commit → Push로 게시합니다.
+
+```
+Gallery에 아래 소식을 추가해줘.
+- 날짜: 2026-09-11
+- 제목: (실제 소식 제목)
+- 본문: (실제 소식 내용)
+- 사진: assets/img/gallery/event-01.jpg, assets/img/gallery/event-02.jpg
+첫 번째 사진을 대표 사진으로 쓰고, 영문도 함께 작성해줘.
+```
+
+사진은 여러 장 넣거나 생략할 수 있습니다. 사진을 누르면 원본이 새 탭에서 열립니다. 한국어 제목·본문은 `titleKo`, `bodyKo`에 넣으면 KO 선택 시 표시됩니다. 본문은 HTML 없이 일반 텍스트로 입력합니다.
+
+이 사이트는 정적 홈페이지이므로 웹 화면의 업로드 버튼 대신 **사진 파일과 데이터 파일을 저장소에 추가하고 Push하는 방식**입니다. 실제 소식이 없으면 준비 중 안내가 표시됩니다.
+
+------------------------------------------------------------------------
+
 ## 🚀 GitHub Desktop으로 실제 홈페이지에 반영하기
 
 AI 도우미로 수정을 마쳤으면, 이제 인터넷의 진짜 홈페이지에 올릴 차례입니다.
@@ -129,6 +152,7 @@ choi-lab/
 ├─ index.html          # Home (첫 화면 · 연구 소개)
 ├─ members.html        # Members (PI · 대학원생)
 ├─ publications.html   # Publications (논문 목록)
+├─ gallery.html        # Gallery (연구실 소식 · 사진)
 ├─ contact.html        # Contact (연락처 · 지도)
 └─ assets/
    ├─ css/styles.css           # 전체 디자인 · 색상
@@ -138,7 +162,9 @@ choi-lab/
    └─ js/
       ├─ main.js                # 공통 기능 (메뉴 · 페이지 넘김)
       ├─ publications-data.js   # ★ 논문 목록 데이터 (논문은 여기만 고침)
+      ├─ gallery-data.js        # ★ 연구실 소식·사진 데이터
+      ├─ render-gallery.js      # Gallery 카드 표시
       └─ render-pubs.js         # 논문 화면에 그리는 부분 (건드릴 필요 없음)
 ```
 
-상단 메뉴는 **Home · Members · Publications · Contact** 네 개로 이루어져 있습니다. 논문은 한 페이지에 10편씩 나뉘어 보이고, 각 논문 항목은 제목·저자·저널·연도로 구성됩니다.
+상단 메뉴는 **Home · Members · Publications · Gallery · Contact** 다섯 개로 이루어져 있습니다. 논문은 한 페이지에 10편씩 나뉘어 보이고, 각 논문 항목은 제목·저자·저널·연도로 구성됩니다.
