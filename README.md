@@ -1,6 +1,6 @@
 # KNU Drug Delivery Lab 홈페이지 관리 안내
 
-https://kkonoo.github.io/choi-lab/
+[https://wooong0110.github.io/choi-lab-site/](https://wooong0110.github.io/choi-lab-site)
 경북대학교 의과대학 면역학교실 · 최지웅(Jiwoong Choi) 교수님 연구실 홈페이지입니다. 이 문서는 **컴퓨터를 잘 몰라도** 홈페이지를 직접 고칠 수 있도록 만든 사용설명서예요.
 
 ------------------------------------------------------------------------
