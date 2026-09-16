@@ -16,15 +16,31 @@
     var url;
     try { url = new URL(src, location.href); } catch (e) { return null; }
     if (!/^(https?:|file:)$/.test(url.protocol)) return null;
+    // Drive sharing pages are not image files. Use their thumbnail in the
+    // existing grid, while opening the original sharing page on click.
+    var driveId = null;
+    if (url.hostname === 'drive.google.com') {
+      var match = url.pathname.match(/^\/file\/d\/([\w-]+)/);
+      driveId = match ? match[1] : url.searchParams.get('id');
+      if (!driveId || !/^[\w-]+$/.test(driveId)) return null;
+    }
     var link = element('a', cover ? 'gallery-cover' : '');
     link.href = url.href;
     link.target = '_blank';
     link.rel = 'noopener';
     var img = element('img');
-    img.src = url.href;
+    img.src = driveId
+      ? 'https://drive.google.com/thumbnail?id=' + encodeURIComponent(driveId) + '&sz=w1600'
+      : url.href;
     img.alt = alt;
     img.loading = 'lazy';
-    img.addEventListener('error', function () { link.remove(); });
+    img.addEventListener('error', function () {
+      img.hidden = true;
+      link.classList.add('gallery-photo-unavailable');
+      link.appendChild(element('span', '', document.documentElement.lang === 'ko'
+        ? '사진을 불러올 수 없습니다. 원본 보기 ↗'
+        : 'Photo unavailable. View original ↗'));
+    });
     link.appendChild(img);
     return link;
   }

@@ -561,6 +561,7 @@ section { padding: 76px 0; }
 #gallery-grid .thumb .d { display: block; }
 .gallery-cover { position: absolute; inset: 0; }
 .gallery-cover img { width: 100%; height: 100%; object-fit: cover; }
+.gallery-photo-unavailable { display: flex; align-items: flex-start; padding: 16px; min-height: 100px; background: var(--paper-2); color: var(--ink); font-size: 13px; }
 .gallery-cover:focus-visible { outline: 3px solid var(--hi); outline-offset: -5px; z-index: 3; }
 #gallery-grid .body { overflow-wrap: anywhere; }
 .gallery-empty { text-align: center; padding: 64px 24px; border: 1px dashed var(--line); border-radius: var(--radius); background: var(--white); }
