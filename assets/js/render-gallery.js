@@ -4,6 +4,18 @@
   var data = window.GALLERY || [];
   var total = Math.max(1, Math.ceil(data.length / 10));
   var page = Math.min(window.currentPage(), total);
+  var viewer = document.createElement('dialog');
+  viewer.className = 'gallery-viewer';
+  var close = document.createElement('button');
+  close.type = 'button';
+  var fullPhoto = document.createElement('img');
+  viewer.append(close, fullPhoto);
+  document.body.appendChild(viewer);
+  close.addEventListener('click', function () { viewer.close(); });
+  viewer.addEventListener('click', function (event) {
+    if (event.target === viewer) viewer.close();
+  });
+  viewer.addEventListener('close', function () { fullPhoto.removeAttribute('src'); });
 
   function element(tag, className, text) {
     var el = document.createElement(tag);
@@ -16,8 +28,7 @@
     var url;
     try { url = new URL(src, location.href); } catch (e) { return null; }
     if (!/^(https?:|file:)$/.test(url.protocol)) return null;
-    // Drive sharing pages are not image files. Use their thumbnail in the
-    // existing grid, while opening the original sharing page on click.
+    // Drive sharing pages are not image files; use their image thumbnail.
     var driveId = null;
     if (url.hostname === 'drive.google.com') {
       var match = url.pathname.match(/^\/file\/d\/([\w-]+)/);
@@ -25,21 +36,28 @@
       if (!driveId || !/^[\w-]+$/.test(driveId)) return null;
     }
     var link = element('a', cover ? 'gallery-cover' : '');
-    link.href = url.href;
-    link.target = '_blank';
-    link.rel = 'noopener';
     var img = element('img');
     img.src = driveId
       ? 'https://drive.google.com/thumbnail?id=' + encodeURIComponent(driveId) + '&sz=w1600'
       : url.href;
+    link.href = img.src;
+    link.addEventListener('click', function (event) {
+      event.preventDefault();
+      var ko = document.documentElement.lang === 'ko';
+      close.textContent = ko ? '닫기 ×' : 'Close ×';
+      viewer.setAttribute('aria-label', ko ? '사진 확대 보기' : 'Photo viewer');
+      fullPhoto.alt = alt;
+      fullPhoto.src = img.src;
+      viewer.showModal();
+    });
     img.alt = alt;
     img.loading = 'lazy';
     img.addEventListener('error', function () {
       img.hidden = true;
       link.classList.add('gallery-photo-unavailable');
       link.appendChild(element('span', '', document.documentElement.lang === 'ko'
-        ? '사진을 불러올 수 없습니다. 원본 보기 ↗'
-        : 'Photo unavailable. View original ↗'));
+        ? '사진을 불러올 수 없습니다.'
+        : 'Photo unavailable.'));
     });
     link.appendChild(img);
     return link;
@@ -55,7 +73,7 @@
       var card = element('article', 'news-card');
       var thumb = element('div', 'thumb');
       if (images.length) {
-        var cover = photo(images[0], title + (ko ? ' — 대표 사진 원본 보기' : ' — View cover photo'), true);
+        var cover = photo(images[0], title + (ko ? ' — 대표 사진 확대 보기' : ' — Enlarge cover photo'), true);
         if (cover) thumb.appendChild(cover);
       }
       var overlay = element('div', 'ov');
