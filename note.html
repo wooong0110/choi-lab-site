@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Publications · KNU Drug Delivery Lab</title>
-<meta name="description" content="Selected publications from the KNU Drug Delivery Lab.">
+<title>Note · KNU Drug Delivery Lab</title>
+<meta name="description" content="Weekly research updates in drug delivery and biomaterials.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&display=swap" rel="stylesheet">
@@ -14,6 +14,7 @@
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <script>try{document.documentElement.dataset.theme=localStorage.getItem('choilab-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.lang=localStorage.getItem('choilab-language')==='ko'?'ko':'en'}catch(e){}</script>
 <link rel="stylesheet" href="assets/css/styles.css">
+<link rel="stylesheet" href="assets/css/cards.css">
 </head>
 <body>
 
@@ -27,33 +28,51 @@
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="members.html">Members</a></li>
-      <li><a href="publications.html" class="active">Publications</a></li>
+      <li><a href="publications.html">Publications</a></li>
       <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="note.html">Note</a></li>
+      <li><a href="note.html" class="active" aria-current="page">Note</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </div>
 </header>
 
-<section class="hero" style="padding-bottom:0">
-  <div class="wrap" style="padding-bottom:64px">
-    <span class="eyebrow">Research Output</span>
-    <h1 style="font-size:clamp(30px,4.6vw,52px)">Selected <em>publications</em></h1>
-  </div>
-</section>
-
+<main>
+<section class="hero" style="padding-bottom:0"><div class="wrap" style="padding-bottom:64px"><span class="eyebrow">Notes &amp; Resources</span><h1 style="font-size:clamp(30px,4.6vw,52px)">Latest research &amp; <em>field updates</em></h1><p class="lead">Weekly research updates in drug delivery and biomaterials.</p></div></section>
 <section>
   <div class="wrap">
-    <p class="pub-note reveal">For the full list, see <a href="https://scholar.google.com/citations?user=IZrgQWMAAAAJ&hl=ko" target="_blank" rel="noopener" style="color:var(--primary);font-weight:600">Google Scholar</a>.</p>
-
-    <p class="pub-role-note reveal"><sup>*</sup> First or co-first author</p>
-
-    <!-- 논문은 여기에 직접 쓰지 않습니다. assets/js/publications-data.js 파일만 수정하세요. -->
-    <ul id="pub-list" class="pub-list"></ul>
-    <nav id="pub-pager" class="pager"></nav>
+    <div class="section-head reveal">
+      <span class="kicker">Weekly · 카드뉴스</span>
+      <h2>Field updates</h2>
+      <p>관련 분야 최신 논문을 정리한 위클리 카드뉴스입니다. <br>분야로 거르거나 키워드로 찾고, 카드를 누르면 자세히 펼쳐집니다.</p>
+    </div>
+    <div id="cardnews-period" class="cardnews-chips reveal" role="group" aria-label="Period">
+      <button class="cn-chip on" type="button" data-period="recent" aria-pressed="true">Recent 3 months</button>
+      <button class="cn-chip" type="button" data-period="archive" aria-pressed="false">Archive</button>
+    </div>
+    <div class="cardnews-bar reveal">
+      <div id="cardnews-archive-controls" class="cn-archive-controls" hidden>
+        <label class="cn-week"><span id="cardnews-year-label">Year</span>
+          <select id="cardnews-year"></select>
+        </label>
+        <label class="cn-week"><span id="cardnews-quarter-label">Quarter</span>
+          <select id="cardnews-quarter"></select>
+        </label>
+      </div>
+      <label class="cn-week"><span>Week</span>
+        <select id="cardnews-week"></select>
+      </label>
+      <input id="cardnews-search" type="search" placeholder="Search title, summary, journal…" aria-label="Search papers">
+      <span id="cardnews-meta" class="cn-count"></span>
+    </div>
+    <div id="cardnews-chips" class="cardnews-chips reveal"></div>
+    <!-- 카드는 assets/js/cards-data.js 의 CARDNEWS 에서 자동 생성됩니다. -->
+    <p id="cardnews-notice" class="cn-notice" hidden></p>
+    <p class="cn-guidance">별점은 연구실 관련도이며 논문의 품질 점수가 아닙니다. 적용 제안은 추론입니다.</p>
+    <div id="cardnews-grid" class="cardnews-grid"></div>
   </div>
 </section>
 
+</main>
 <footer class="site-footer">
   <div class="wrap">
     <div class="footer-top">
@@ -85,7 +104,7 @@
 </footer>
 
 <script src="assets/js/main.js"></script>
-<script src="assets/js/publications-data.js"></script>
-<script src="assets/js/render-pubs.js"></script>
+<script src="assets/js/cards-data.js"></script>
+<script src="assets/js/render-cards.js"></script>
 </body>
 </html>

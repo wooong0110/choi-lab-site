@@ -1,0 +1,109 @@
+/* ===========================================================
+   Card News (note.html) — weekly literature cards
+   =========================================================== */
+.cardnews-bar {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 14px;
+  margin-bottom: 18px;
+}
+.cardnews-bar .cn-week {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 14px; font-weight: 600; color: var(--ink-soft);
+}
+.cardnews-bar select,
+.cardnews-bar input[type="search"] {
+  font-family: var(--sans); font-size: 14.5px; color: var(--ink);
+  background: var(--white); border: 1px solid var(--line);
+  border-radius: 10px; padding: 9px 12px;
+}
+.cardnews-bar select { cursor: pointer; }
+.cn-archive-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
+.cn-archive-controls[hidden] { display: none; }
+.cardnews-bar input[type="search"] { flex: 1; min-width: 200px; }
+.cardnews-bar select:focus,
+.cardnews-bar input:focus { outline: none; border-color: var(--primary-lt); }
+.cn-count { font-size: 13.5px; color: var(--muted); font-weight: 600; white-space: nowrap; }
+
+.cardnews-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+.cn-chip {
+  font-family: var(--sans); font-size: 13px; font-weight: 600;
+  color: var(--ink-soft); background: var(--white);
+  border: 1px solid var(--line); border-radius: 999px;
+  padding: 6px 13px; cursor: pointer; transition: .18s;
+}
+.cn-chip:hover { border-color: var(--primary-lt); color: var(--primary); }
+.cn-chip.on { background: var(--primary); border-color: var(--primary); color: #fff; }
+
+.cardnews-grid { display: grid; gap: 14px; }
+.cn-empty { color: var(--muted); font-size: 15px; padding: 24px 0; }
+
+.cn-card {
+  background: var(--white); border: 1px solid var(--line);
+  border-radius: var(--radius); overflow: hidden; transition: box-shadow .25s, border-color .25s;
+}
+.cn-card:hover { box-shadow: var(--shadow); border-color: transparent; }
+.cn-card.open { border-color: var(--primary-lt); box-shadow: var(--shadow); }
+
+.cn-head {
+  display: block; width: 100%; text-align: left; cursor: pointer;
+  background: none; border: 0; font: inherit; color: inherit;
+  padding: 20px 22px;
+}
+.cn-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
+.cn-badge {
+  font-size: 12.5px; font-weight: 600; color: var(--primary);
+  background: color-mix(in srgb, var(--hi) 26%, transparent);
+  border-radius: 999px; padding: 4px 11px; white-space: nowrap;
+}
+.cn-stars { color: var(--accent); font-size: 14px; letter-spacing: 1px; white-space: nowrap; }
+.cn-title {
+  font-family: var(--serif); font-weight: 600; font-size: 19px;
+  line-height: 1.3; color: var(--ink); margin: 0 0 6px;
+}
+.cn-metaline { font-size: 13px; color: var(--muted); margin-bottom: 10px; }
+.cn-oneliner { color: var(--ink-soft); font-size: 15px; line-height: 1.6; margin: 0; }
+.cn-toggle {
+  display: inline-block; margin-top: 12px;
+  font-size: 13.5px; font-weight: 600; color: var(--primary);
+}
+.cn-card:hover .cn-toggle { color: var(--accent); }
+
+.cn-detail { padding: 0 22px 22px; }
+.cn-detail dl { display: grid; grid-template-columns: max-content 1fr; gap: 8px 16px; margin: 4px 0 0; }
+.cn-detail dt {
+  font-size: 13px; font-weight: 700; color: var(--primary);
+  white-space: nowrap; padding-top: 1px;
+}
+.cn-detail dd { font-size: 14.5px; line-height: 1.62; color: var(--ink-soft); margin: 0; }
+.cn-concepts { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+.cn-tag {
+  font-size: 12px; color: var(--ink-soft); background: var(--paper-2);
+  border-radius: 6px; padding: 3px 9px;
+}
+.cn-links { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 16px; }
+.cn-links a { font-size: 14px; font-weight: 600; color: var(--primary); }
+.cn-links a:hover { color: var(--accent); }
+
+@media (max-width: 620px) {
+  .cn-detail dl { grid-template-columns: 1fr; gap: 2px 0; }
+  .cn-detail dt { padding-top: 10px; }
+  .cn-detail dt:first-child { padding-top: 0; }
+}
+
+/* Card News — "더 보기" 버튼 & 무엇을 했나 목록 */
+.cn-more {
+  display: block; width: 100%; margin-top: 4px;
+  font-family: var(--sans); font-size: 14px; font-weight: 600;
+  color: var(--primary); background: var(--white);
+  border: 1px dashed var(--line); border-radius: var(--radius);
+  padding: 13px; cursor: pointer; transition: .18s;
+}
+.cn-more:hover { border-color: var(--primary-lt); background: var(--paper-2); color: var(--accent); }
+.cn-detail .cn-did { margin: 0; padding-left: 18px; }
+.cn-detail .cn-did li { font-size: 14.5px; line-height: 1.6; color: var(--ink-soft); margin-bottom: 4px; }
+.cn-detail .cn-did li:last-child { margin-bottom: 0; }
+.cn-notice { padding:16px 20px; margin-bottom:16px; border:1px solid var(--line); border-radius:var(--radius); background:var(--paper-2); color:var(--ink-soft); font-size:13px; }
+.cn-guidance { color:var(--muted); font-size:13px; margin-bottom:20px; }
+.cn-card { overflow-wrap:anywhere; }
+.cn-head:focus-visible, .cn-chip:focus-visible, .cn-more:focus-visible { outline:2px solid var(--primary); outline-offset:-3px; }
+html[data-theme="dark"] .cn-chip.on { color:var(--paper); }
+@media(max-width:620px){.cn-top{flex-wrap:wrap}.cn-badge{white-space:normal}.cardnews-bar input[type="search"]{min-width:0;width:100%;flex-basis:100%}}

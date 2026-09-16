@@ -15,6 +15,13 @@
 
   // [source text, English, Korean]. Names and publication metadata stay unchanged.
   var TRANSLATIONS = [
+    ["Note","Note","노트"],
+    ["Week","Week","주차"],
+    ["Notes & Resources","Notes & Resources","노트 & 자료"],
+    ["Latest research &","Latest research &","최신 논문 &"],
+    ["field updates","field updates","연구 동향"],
+    ["Weekly research updates in drug delivery and biomaterials.","Weekly research updates in drug delivery and biomaterials.","약물전달과 바이오소재 분야의 최신 논문을 매주 소개합니다."],
+    ["Field updates","Field updates","최신논문 카드뉴스"],
     ['Gallery', 'Gallery', '갤러리'],
     ['Lab Updates', 'Lab Updates', '연구실 소식'],
     ['News, milestones, and everyday moments from our lab.', 'News, milestones, and everyday moments from our lab.', '연구실의 새로운 소식과 성과, 함께하는 일상을 전합니다.'],
@@ -96,6 +103,7 @@
   ];
 
   var pageMeta = {
+    'note.html': {en:['Note · KNU Drug Delivery Lab','Weekly research updates in drug delivery and biomaterials.'], ko:['노트 · 경북대학교 약물전달 연구실','약물전달과 바이오소재 분야의 최신논문 카드뉴스입니다.']},
     'index.html': {
       en: ['KNU Drug Delivery Lab', 'Drug Delivery Lab at Kyungpook National University — developing biomaterial-based drug delivery systems with liposomes, exosomes and hydrogels.'],
       ko: ['경북대학교 약물전달 연구실', '리포솜, 엑소좀, 하이드로젤을 활용한 바이오소재 기반 약물전달 시스템을 개발하는 경북대학교 약물전달 연구실입니다.']
