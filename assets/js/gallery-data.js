@@ -22,7 +22,8 @@ window.GALLERY = [
       "assets/img/gallery/260916/IMG_0182.jpg",
       "assets/img/gallery/260916/IMG_0238.jpg",
       "assets/img/gallery/260916/IMG_0242.jpg",
-      "assets/img/gallery/260916/IMG_0244.jpg"
+      "assets/img/gallery/260916/IMG_0244.jpg",
+      "assets/img/gallery/260916/IMG_0284.jpg"
     ]
   },
   {
