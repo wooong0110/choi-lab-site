@@ -13,6 +13,18 @@
  * },
  */
 window.GALLERY = [
+{
+  "date": "2026-09-16",
+  "title": "jola maun silbi gimchi and melon and peter jiwoong parker",
+  "body": [],
+  "images": [
+    "assets/img/gallery/260916/IMG_0160.jpg",
+    "assets/img/gallery/260916/IMG_0182.jpg",
+    "assets/img/gallery/260916/IMG_0238.jpg",
+    "assets/img/gallery/260916/IMG_0242.jpg",
+    "assets/img/gallery/260916/IMG_0244.jpg"
+  ]
+},
   {
     date: "2026-09-11",
     title: "SeoMoon Sijang",
