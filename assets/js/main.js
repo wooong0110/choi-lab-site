@@ -165,6 +165,7 @@
     nodes.forEach(function (n) { translateTextNode(n, lang); });
 
     var file = location.pathname.split('/').pop() || 'index.html';
+    if (file === 'lab-gallery.html') file = 'gallery.html';
     var meta = pageMeta[file] && pageMeta[file][lang];
     if (meta) {
       document.title = meta[0];

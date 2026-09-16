@@ -141,7 +141,7 @@ choi-lab/
 ├─ index.html          # Home (첫 화면 · 연구 소개)
 ├─ members.html        # Members (PI · 대학원생)
 ├─ publications.html   # Publications (논문 목록)
-├─ gallery.html        # Gallery (연구실 소식 · 사진)
+├─ lab-gallery.html    # Gallery (연구실 소식 · 사진)
 ├─ contact.html        # Contact (연락처 · 지도)
 └─ assets/
    ├─ css/styles.css           # 전체 디자인 · 색상
