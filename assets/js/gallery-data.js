@@ -14,7 +14,7 @@
 window.GALLERY = [
   {
     date: "2026-09-11",
-    title: "260911",
+    title: "SeoMoon Sijang",
     body: [],
     images: [
       "assets/img/gallery/260911/KakaoTalk_20260911_181705593.jpg",
