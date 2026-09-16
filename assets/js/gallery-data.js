@@ -42,6 +42,24 @@ window.GALLERY = [
     ]
   },
   {
+    "date": "2026-09-02",
+    "title": "Happy trip with KNU-Med & Hamamatsu-Med",
+    "body": [],
+    "images": [
+      "assets/img/gallery/260902/IMG_0007.jpg",
+      "assets/img/gallery/260902/IMG_0009.jpg",
+      "assets/img/gallery/260902/IMG_0025.jpg",
+      "assets/img/gallery/260902/IMG_0026.jpg",
+      "assets/img/gallery/260902/IMG_0032.jpg",
+      "assets/img/gallery/260902/IMG_0055.jpg",
+      "assets/img/gallery/260902/IMG_0062.jpg",
+      "assets/img/gallery/260902/IMG_0066.jpg",
+      "assets/img/gallery/260902/IMG_0067.jpg",
+      "assets/img/gallery/260902/IMG_9971.jpg",
+      "assets/img/gallery/260902/IMG_9996.jpg"
+    ]
+  },
+  {
     "date": "2026-09-01",
     "title": "haidi rao 2nd try and jolla suceess",
     "body": [],
