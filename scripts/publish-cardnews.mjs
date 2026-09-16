@@ -15,7 +15,7 @@ export function validateWeek(data, label) {
   for (const paper of data.papers) {
     if (!paper || typeof paper.title !== 'string' || !paper.title.trim()) fail('paper needs a title');
     if (!Number.isInteger(paper.rating) || paper.rating < 0 || paper.rating > 5) fail('rating must be an integer from 0 to 5');
-    for (const key of ['pmid','title','doi','pubmed','journal','year','author','publication_date','online_date','domain','emoji','tldr','question','key_result','why_for_us','limitations','reuse','next_step','type']) {
+    for (const key of ['pmid','title','doi','pubmed','journal','year','author','publication_date','online_date','domain','emoji','tldr','question','key_result','why_for_us','limitations','reuse','next_step','type','abstract','abstract_excerpt','abstract_url']) {
       if (paper[key] !== undefined && typeof paper[key] !== 'string') fail(`${key} must be text`);
     }
     for (const key of ['what_they_did','concepts']) {

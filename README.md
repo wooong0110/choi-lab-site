@@ -194,6 +194,8 @@ node scripts/publish-cardnews.mjs
 
 JSON 형식은 `assets/data/cardnews/2026-09-15.json`을 참고합니다. 최상위는 `date`, `count`, `notice`, `papers`이고, `count`는 실제 편수와 같아야 합니다. 논문별 `title`과 정수 `rating`(0–5)이 필수입니다. DOI는 `10.…`와 `https://doi.org/…`를 모두 지원합니다.
 
+카드를 펼치면 Abstract → 한글 요약 → 상세 항목 순으로 표시됩니다. `what_they_did` 배열은 bullet 없이 일반 문장으로 합칩니다. 원문 초록의 짧은 발췌는 `abstract_excerpt`, 출처는 `abstract_url`에 저장합니다. 사용자가 직접 제공하거나 재사용 허가가 확인된 전문은 `abstract`에 넣으면 전문이 우선 표시됩니다. 현재 29편은 PubMed의 논문별 원문 25단어 이내 발췌와 전체 초록 링크를 포함합니다.
+
 2026-09-16에 기존 월요일 오후 2시 예약 작업을 **JSON 저장 → 읽기용 HTML 생성 → 사이트 데이터 병합** 흐름으로 갱신했습니다. 자동 게시와 git push는 하지 않습니다. 완료 후 GitHub Desktop에서 변경 내용을 검토하고 **Commit → Push origin**하면 사이트에 반영됩니다. 최초 Note 추가 시 HTML·CSS·JS도 함께 올리고, 이후 매주 갱신은 JSON과 cards-data.js를 함께 올립니다.
 
 검증: `node --test scripts/publish-cardnews.test.mjs` (과거 데이터 보존, 재실행, 잘못된 입력, 월말 경계, Archive 선택, 링크·문자열 처리).

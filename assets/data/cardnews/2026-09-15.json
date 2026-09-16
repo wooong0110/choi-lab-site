@@ -27,7 +27,9 @@
       "reuse": "재사용 검토 대상: 항체 코팅 LNP에 CXCL9 mRNA와 TLR 작용제를 담아 TAM을 표적화했다. 구체적 재료·조건·공개 데이터는 원문 확인 필요.",
       "next_step": "표적 항체 효과와 mRNA·보조제 효과를 분리하는 대조군 구성을 검토한다.",
       "concepts": [],
-      "type": "Research"
+      "type": "Research",
+      "abstract_excerpt": "The immunosuppressive tumor microenvironment (TME) remains one of the main obstacles that limit responsiveness to immunotherapy. Recently, lipid nanoparticles carrying messenger RNA (mRNA) have emerged …",
+      "abstract_url": "https://pubmed.ncbi.nlm.nih.gov/42726873/#abstract"
     },
     {
       "pmid": "42711375",
@@ -53,7 +55,9 @@
       "reuse": "재사용 검토 대상: 카복실산과 아민을 함께 가진 S-lipid의 pH별 전하 전환을 이용했다. 구체적 재료·조건·공개 데이터는 원문 확인 필요.",
       "next_step": "항체 표면화 이후에도 전하 전환과 염증 억제 특성이 유지되는지 검토한다.",
       "concepts": [],
-      "type": "Research"
+      "type": "Research",
+      "abstract_excerpt": "Lipid nanoparticles (LNPs) have great potential as nucleic acid delivery vehicles; however, they trigger the production of inflammatory cytokines, which limits their medical applications. Developing …",
+      "abstract_url": "https://pubmed.ncbi.nlm.nih.gov/42711375/#abstract"
     },
     {
       "pmid": "42714328",
@@ -79,7 +83,9 @@
       "reuse": "재사용 검토 대상: dual pKa 이온화 지질을 합성하고 정맥 투여 LNP 및 분자동역학 분석으로 평가했다. 구체적 재료·조건·공개 데이터는 원문 확인 필요.",
       "next_step": "단일 pKa·dual pKa 제형에서 표적 세포 발현과 염증 반응을 함께 비교하는 설계를 검토한다.",
       "concepts": [],
-      "type": "Research"
+      "type": "Research",
+      "abstract_excerpt": "Lipid nanoparticles (LNPs) have enabled the clinical application of RNA therapeutics, including approved mRNA vaccines and siRNA medicines. However, their predominant accumulation in liver after …",
+      "abstract_url": "https://pubmed.ncbi.nlm.nih.gov/42714328/#abstract"
     },
     {
       "pmid": "42711959",
@@ -105,7 +111,9 @@
       "reuse": "재사용 검토 대상: NRP-1 표적 tLyP-1 펩타이드와 TiO2 유래 초음파 감작체로 TPZ·siXkr8 전달체를 만들었다. 구체적 재료·조건·공개 데이터는 원문 확인 필요.",
       "next_step": "세포사멸 증가와 면역억제 완화를 구분할 평가 지표를 검토한다.",
       "concepts": [],
-      "type": "Research"
+      "type": "Research",
+      "abstract_excerpt": "Breast cancer features an immunosuppressive tumor microenvironment following chemotherapy and develops resistance to conventional immune checkpoint inhibitors. Through single-cell database mining and in vitro analysis, …",
+      "abstract_url": "https://pubmed.ncbi.nlm.nih.gov/42711959/#abstract"
     },
     {
       "pmid": "42714307",
@@ -131,7 +139,9 @@
       "reuse": "재사용 검토 대상: 퀴녹살리논 기반 QTEO 광감작제를 합성해 AR/PARP 표적 기능과 PDT를 결합했다. 구체적 재료·조건·공개 데이터는 원문 확인 필요.",
       "next_step": "단일 표적 광감작제와 비교해 이중 표적화의 기여를 검토한다.",
       "concepts": [],
-      "type": "Research"
+      "type": "Research",
+      "abstract_excerpt": "Prostate cancer poses a severe threat to men's health worldwide, and conventional therapeutic modalities are associated with various limitations. Photodynamic therapy (PDT) offers distinctive advantages …",
+      "abstract_url": "https://pubmed.ncbi.nlm.nih.gov/42714307/#abstract"
     },
     {
       "pmid": "42714842",
@@ -157,7 +167,9 @@
       "reuse": "재사용 검토 대상: PLGA-PEG-PLGA 조성이 MXene 산화 안정성과 겔 분해에 미치는 영향을 계산·실험으로 평가했다. 구체적 재료·조건·공개 데이터는 원문 확인 필요.",
       "next_step": "피부 밀착성·분해·소재 안정성을 따로 비교한다. 탈모 치료 효과는 이 논문의 검증 대상이 아니다.",
       "concepts": [],
-      "type": "Research"
+      "type": "Research",
+      "abstract_excerpt": "Oxidative degradation of Ti3C2Tx MXene in aqueous and biological environments remains a persistent obstacle to its long-term use in biomedical applications, yet the role of …",
+      "abstract_url": "https://pubmed.ncbi.nlm.nih.gov/42714842/#abstract"
     },
     {
       "pmid": "42722162",
@@ -183,7 +195,9 @@
       "reuse": "재사용 검토 대상: HA에 carbodihydrazide와 gallic acid 유도체를 도입해 패치를 제조했다. 구체적 재료·조건·공개 데이터는 원문 확인 필요.",
       "next_step": "별도 약물 탑재 전 소재 자체의 항산화·면역조절 효과를 분리해 평가한다.",
       "concepts": [],
-      "type": "Research"
+      "type": "Research",
+      "abstract_excerpt": "Chronic wounds often suffer from persistent inflammation, which hinders tissue regeneration. In this study, we present a multifunctional hyaluronic acid (HA)-based hydrogel patch with controlled …",
+      "abstract_url": "https://pubmed.ncbi.nlm.nih.gov/42722162/#abstract"
     },
     {
       "pmid": "42730592",
@@ -209,7 +223,9 @@
       "reuse": "재사용 검토 대상: p53 펩타이드의 이황화 결합과 RGD를 활용해 doxorubicin과 공동 조립했다. 구체적 재료·조건·공개 데이터는 원문 확인 필요.",
       "next_step": "환원 반응성·표적화·펩타이드 치료 효과 각각의 대조군을 검토한다.",
       "concepts": [],
-      "type": "Research"
+      "type": "Research",
+      "abstract_excerpt": "The development of nanocarriers using therapeutic molecules is a rational strategy to enhance treatment efficacy despite limited drug delivery efficiency. Herein, we devised an antitumor …",
+      "abstract_url": "https://pubmed.ncbi.nlm.nih.gov/42730592/#abstract"
     },
     {
       "pmid": "42716130",
@@ -235,7 +251,9 @@
       "reuse": "재사용 검토 대상: 철–ICG 복합체를 알부민 나노케이지에 조립하고 pH/GSH 반응 및 빛에 의한 방출을 이용했다. 구체적 재료·조건·공개 데이터는 원문 확인 필요.",
       "next_step": "광열·광산화·철 촉매 효과를 분리하고 빛이 도달하는 범위의 제약을 검토한다.",
       "concepts": [],
-      "type": "Research"
+      "type": "Research",
+      "abstract_excerpt": "Artificial enzymes show great promise in cancer therapy, yet inadequate in vivo catalytic selectivity and robustness restrict their therapeutic potencies. Here, we report a coordination-driven …",
+      "abstract_url": "https://pubmed.ncbi.nlm.nih.gov/42716130/#abstract"
     },
     {
       "pmid": "42723174",
@@ -261,7 +279,9 @@
       "reuse": "재사용 검토 대상: cRGD 리포좀에 gemcitabine과 siFSTL3를 봉입해 방사선·anti-PD-L1과 병용했다. 구체적 재료·조건·공개 데이터는 원문 확인 필요.",
       "next_step": "약물·siRNA·방사선 각각의 기여와 항원 제시 여부를 검토한다.",
       "concepts": [],
-      "type": "Research"
+      "type": "Research",
+      "abstract_excerpt": "Pancreatic adenocarcinoma (PAAD) is an immunosuppressive malignancy refractory to radiotherapy and immunotherapy. Conventional tumor vaccines fail in PAAD due to a suppressive tumor microenvironment (TME), …",
+      "abstract_url": "https://pubmed.ncbi.nlm.nih.gov/42723174/#abstract"
     },
     {
       "pmid": "42727817",
@@ -287,7 +307,9 @@
       "reuse": "재사용 검토 대상: 액체질소 처리 세포 기반 depot을 제작해 CXCL9 및 anti-PD-1 전달을 평가했다. 구체적 재료·조건·공개 데이터는 원문 확인 필요.",
       "next_step": "단백질 잔류·방출·활성을 각각 검증한 방법과 세포 불활화 검증을 살핀다.",
       "concepts": [],
-      "type": "Research"
+      "type": "Research",
+      "abstract_excerpt": "Immune checkpoint blockade has transformed cancer therapy, yet its efficacy against solid tumors remains constrained by poor T cell infiltration and an immunosuppressive tumor microenvironment. …",
+      "abstract_url": "https://pubmed.ncbi.nlm.nih.gov/42727817/#abstract"
     },
     {
       "pmid": "42723396",
@@ -313,7 +335,9 @@
       "reuse": "재사용 검토 대상: 지질 구조·막 특성·생체분자 상호작용이 PEG 탈리 속도에 미치는 문헌을 종합했다. 구체적 재료·조건·공개 데이터는 원문 확인 필요.",
       "next_step": "PEG 길이·지질 앵커·리간드 부착 방식에 따른 표면 기능 유지 평가를 정리한다.",
       "concepts": [],
-      "type": "Review"
+      "type": "Review",
+      "abstract_excerpt": "Polyethylene glycol (PEG)-lipids are widely used to engineer the interfacial properties of lipid-based nanomaterials, where they play a central role in governing colloidal stability and …",
+      "abstract_url": "https://pubmed.ncbi.nlm.nih.gov/42723396/#abstract"
     },
     {
       "pmid": "42708923",
@@ -339,7 +363,9 @@
       "reuse": "재사용 검토 대상: PEG 농도·이온강도·비드 표면을 최적화하고 EV 및 결합 핵산·단백질을 순차 추출했다. 구체적 재료·조건·공개 데이터는 원문 확인 필요.",
       "next_step": "치료용 EV에도 적용하려면 기능 보존과 잔류 PEG·비드를 별도로 확인한다.",
       "concepts": [],
-      "type": "Research"
+      "type": "Research",
+      "abstract_excerpt": "Extracellular vesicles (EVs) are crucial mediators of intercellular communication and have the potential to serve as biomarkers for disease diagnosis and therapeutic monitoring. However, most …",
+      "abstract_url": "https://pubmed.ncbi.nlm.nih.gov/42708923/#abstract"
     },
     {
       "pmid": "42726851",
@@ -365,7 +391,9 @@
       "reuse": "재사용 검토 대상: AT1R 표적 NIR-II/광음향 플랫폼에 losartan과 iPSC 유래 심근세포 엑소좀을 함께 탑재했다. 구체적 재료·조건·공개 데이터는 원문 확인 필요.",
       "next_step": "영상 신호가 EV 자체의 도달을 얼마나 대변하는지 추적 대조군을 검토한다.",
       "concepts": [],
-      "type": "Research"
+      "type": "Research",
+      "abstract_excerpt": "Ischemic heart disease remains a leading cause of global mortality, primarily driven by myocardial infarction and subsequent ischemia-reperfusion injury (MI/RI) following coronary artery occlusion. This …",
+      "abstract_url": "https://pubmed.ncbi.nlm.nih.gov/42726851/#abstract"
     },
     {
       "pmid": "42708904",
@@ -391,7 +419,9 @@
       "reuse": "재사용 검토 대상: PBA 기능화 고분자 나노캡슐을 제작하고 구조–활성 관계를 분석했다. 구체적 재료·조건·공개 데이터는 원문 확인 필요.",
       "next_step": "표적 리간드와 기본 소재의 장기 분포 효과를 분리해 비교한다.",
       "concepts": [],
-      "type": "Research"
+      "type": "Research",
+      "abstract_excerpt": "Effective lung-targeted therapies can directly treat pulmonary diseases and engage tissue-resident immunity for lasting effects. However, protein delivery systems specifically targeting the lung remain scarce. …",
+      "abstract_url": "https://pubmed.ncbi.nlm.nih.gov/42708904/#abstract"
     },
     {
       "pmid": "42716126",
@@ -417,7 +447,9 @@
       "reuse": "재사용 검토 대상: 알부민 나노입자에 붕소 표지 콜레스테롤 유도체를 담고 GLUT1 knockdown 등으로 기전을 평가했다. 구체적 재료·조건·공개 데이터는 원문 확인 필요.",
       "next_step": "축적량과 세포 내 체류시간을 독립 지표로 비교한다.",
       "concepts": [],
-      "type": "Research"
+      "type": "Research",
+      "abstract_excerpt": "Boron neutron capture therapy (BNCT) requires selective accumulation and retention of 10B in cancer cells during neutron irradiation. However, current clinical boron agents are limited …",
+      "abstract_url": "https://pubmed.ncbi.nlm.nih.gov/42716126/#abstract"
     },
     {
       "pmid": "42727297",
@@ -443,7 +475,9 @@
       "reuse": "재사용 검토 대상: MCF-7 막, 자성 입자, 이황화 결합 유기실리카 나선체와 doxorubicin을 결합했다. 구체적 재료·조건·공개 데이터는 원문 확인 필요.",
       "next_step": "막 코팅의 표적 기여와 자기장 없이 발생하는 약물 효과를 분리한다.",
       "concepts": [],
-      "type": "Research"
+      "type": "Research",
+      "abstract_excerpt": "A major challenge for injectable therapeutic nanorobots is to achieve efficient and spatially precise intracellular actuation under biologically compatible field conditions. Here we introduce homotypic …",
+      "abstract_url": "https://pubmed.ncbi.nlm.nih.gov/42727297/#abstract"
     },
     {
       "pmid": "42713665",
@@ -469,7 +503,9 @@
       "reuse": "재사용 검토 대상: AMT-676은 CDH17 항체·T1000 linker·exatecan으로 구성되며 DAR은 4다. 구체적 재료·조건·공개 데이터는 원문 확인 필요.",
       "next_step": "항원 발현 수준과 정상 조직 발현이 전달 선택성에 미치는 영향을 검토한다.",
       "concepts": [],
-      "type": "Research"
+      "type": "Research",
+      "abstract_excerpt": "Advanced-stage gastrointestinal (GI) cancers present an unmet need for innovative therapies, and antibody-drug conjugates (ADCs) offer promising solutions. This study investigates the antitumor efficacy and …",
+      "abstract_url": "https://pubmed.ncbi.nlm.nih.gov/42713665/#abstract"
     },
     {
       "pmid": "42728339",
@@ -495,7 +531,9 @@
       "reuse": "재사용 검토 대상: 수식 pegRNA와 RNA 형태 편집기를 LNP로 전신 전달했다. 구체적 재료·조건·공개 데이터는 원문 확인 필요.",
       "next_step": "RNA 수식 차이에 따른 안정성과 기능적 전달을 동일 제형에서 비교하는 방안을 검토한다.",
       "concepts": [],
-      "type": "Research"
+      "type": "Research",
+      "abstract_excerpt": "Prime editing holds promise for therapeutic applications. However, viral delivery of the prime editor presents challenges for clinical translation due to concerns regarding long-term expression. …",
+      "abstract_url": "https://pubmed.ncbi.nlm.nih.gov/42728339/#abstract"
     },
     {
       "pmid": "42717514",
@@ -521,7 +559,9 @@
       "reuse": "재사용 검토 대상: HA·laminin 겔로 신경전구세포를 전달하고 methylcellulose 겔로 ChASE37을 친화성 방출했다. 구체적 재료·조건·공개 데이터는 원문 확인 필요.",
       "next_step": "피부·모낭 적용에서는 방출 단백질의 활성 유지와 조직 반응을 새로 검증해야 한다.",
       "concepts": [],
-      "type": "Research"
+      "type": "Research",
+      "abstract_excerpt": "Stroke is a leading cause of disability worldwide, yet effective treatments to regenerate damaged tissue remain elusive. We investigated tissue regeneration and functional recovery post-stroke …",
+      "abstract_url": "https://pubmed.ncbi.nlm.nih.gov/42717514/#abstract"
     },
     {
       "pmid": "42723369",
@@ -547,7 +587,9 @@
       "reuse": "재사용 검토 대상: lysozyme 나노섬유–PtCu 복합체를 온도 반응성 PEO-PPO-PEO 겔에 넣었다. 구체적 재료·조건·공개 데이터는 원문 확인 필요.",
       "next_step": "촉매 단독과 겔 봉입 제형의 체류·독성·상처 회복을 비교한다.",
       "concepts": [],
-      "type": "Research"
+      "type": "Research",
+      "abstract_excerpt": "Nasal mucus acts as a primary immunological barrier by synergistically integrating physical trapping and chemical antimicrobial defenses. However, constructing an artificial gel system that recapitulates …",
+      "abstract_url": "https://pubmed.ncbi.nlm.nih.gov/42723369/#abstract"
     },
     {
       "pmid": "42730502",
@@ -573,7 +615,9 @@
       "reuse": "재사용 검토 대상: 절개 패턴을 가진 다층 마이크로니들 패치에 화학·자기 구동을 결합했다. 구체적 재료·조건·공개 데이터는 원문 확인 필요.",
       "next_step": "기존 EV 경구 전달과 달리 장치 기반 접근이며 실제 장관 위치 제어의 제약을 먼저 검토한다.",
       "concepts": [],
-      "type": "Research"
+      "type": "Research",
+      "abstract_excerpt": "Oral drug delivery is widely accessible to patients for the treatment of gastrointestinal diseases such as gastric ulcers. However, the efficacy of orally delivered drugs …",
+      "abstract_url": "https://pubmed.ncbi.nlm.nih.gov/42730502/#abstract"
     },
     {
       "pmid": "42708901",
@@ -599,7 +643,9 @@
       "reuse": "재사용 검토 대상: 표적 나노제형 P2Ns-GA-CsA를 NZBWF1/J 마우스에서 기존 경구 CsA와 비교했다. 구체적 재료·조건·공개 데이터는 원문 확인 필요.",
       "next_step": "투여 횟수 외에 누적 용량·약동학·독성을 동일 기준으로 비교한다.",
       "concepts": [],
-      "type": "Research"
+      "type": "Research",
+      "abstract_excerpt": "Systemic lupus erythematosus (SLE) is a debilitating autoimmune disease fueled by abnormal immune responses and metabolic dysregulation, often leading to life-threatening lupus nephritis (LN). While …",
+      "abstract_url": "https://pubmed.ncbi.nlm.nih.gov/42708901/#abstract"
     },
     {
       "pmid": "42723168",
@@ -625,7 +671,9 @@
       "reuse": "재사용 검토 대상: ceria nanozyme–celastrol 복합체를 rHDL에 결합하고 환자 혈청·전단 유동·동물 모델에서 평가했다. 구체적 재료·조건·공개 데이터는 원문 확인 필요.",
       "next_step": "정상 완충액 평가에 더해 염증 혈청 조건에서 제형 기능을 비교한다.",
       "concepts": [],
-      "type": "Research"
+      "type": "Research",
+      "abstract_excerpt": "Biomimetic therapies hold great promise for treating intractable diseases, yet their translation is often hindered by dysfunction-the loss of intended biological function upon exposure to …",
+      "abstract_url": "https://pubmed.ncbi.nlm.nih.gov/42723168/#abstract"
     },
     {
       "pmid": "42723167",
@@ -651,7 +699,9 @@
       "reuse": "재사용 검토 대상: FeWOx@Ag/Bi2Te3-HA 나노효소에 자기장 구동과 영상 기능을 결합했다. 구체적 재료·조건·공개 데이터는 원문 확인 필요.",
       "next_step": "여러 기능 중 치료에 필수적인 요소를 분리한 대조 실험과 소재 잔류를 검토한다.",
       "concepts": [],
-      "type": "Research"
+      "type": "Research",
+      "abstract_excerpt": "Glioblastoma (GBM) therapy remains limited by poor blood-brain barrier (BBB) penetration and an adaptive, immunosuppressive tumor microenvironment (TME). Here, we engineer multifunctional FeWOx@Ag/Bi2Te3-HA nanozymes (FABH) …",
+      "abstract_url": "https://pubmed.ncbi.nlm.nih.gov/42723167/#abstract"
     },
     {
       "pmid": "42717091",
@@ -677,7 +727,9 @@
       "reuse": "재사용 검토 대상: 환자 림프절 공간 분석과 유전자 기능 억제·항체 차단 실험을 결합했다. 구체적 재료·조건·공개 데이터는 원문 확인 필요.",
       "next_step": "PLA2G2D 억제 화물의 림프절 전달을 연구 아이디어로 검토하되 해당 전달체는 논문에서 검증되지 않았다.",
       "concepts": [],
-      "type": "Research"
+      "type": "Research",
+      "abstract_excerpt": "Systemic anti-tumour immunity results from T cell priming in tumour-draining lymph nodes (TDLNs)1-4. Although the suppression of T cells in tumours is well characterized5-8, whether …",
+      "abstract_url": "https://pubmed.ncbi.nlm.nih.gov/42717091/#abstract"
     },
     {
       "pmid": "42726857",
@@ -703,7 +755,9 @@
       "reuse": "재사용 검토 대상: 유전자 결손·기질 강도 측정·분자 분석으로 LOXL4–Piezo1 경로를 조사했다. 구체적 재료·조건·공개 데이터는 원문 확인 필요.",
       "next_step": "겔 강도를 바꿀 때 약물 방출 차이와 직접적인 면역세포 반응을 구분한다.",
       "concepts": [],
-      "type": "Research"
+      "type": "Research",
+      "abstract_excerpt": "Extracellular matrix (ECM) stiffness is known to impair T cell function, yet the underpinning molecular cascade remains undefined. This paper investigates the role of lysyl …",
+      "abstract_url": "https://pubmed.ncbi.nlm.nih.gov/42726857/#abstract"
     },
     {
       "pmid": "42726846",
@@ -729,7 +783,9 @@
       "reuse": "재사용 검토 대상: OMTX305를 환자 유래 폐·난소 종양 절편과 자가 PBMC 공동배양에서 검증했다. 구체적 재료·조건·공개 데이터는 원문 확인 필요.",
       "next_step": "전달체의 2D 효능이 조직 절편에서도 유지되는지 평가하는 틀을 검토한다.",
       "concepts": [],
-      "type": "Research"
+      "type": "Research",
+      "abstract_excerpt": "Within solid tumors, stromal barriers and immune exclusion limit the success of immunotherapies. Thus, novel therapeutic approaches are required to remodel the tumor-supportive microenvironment and …",
+      "abstract_url": "https://pubmed.ncbi.nlm.nih.gov/42726846/#abstract"
     },
     {
       "pmid": "42715334",
@@ -755,7 +811,9 @@
       "reuse": "재사용 검토 대상: TCR 가변 영역과 Trop2를 연결하는 TCR-JANUS를 KRAS-G12V 특이 TCR-T와 조합했다. 구체적 재료·조건·공개 데이터는 원문 확인 필요.",
       "next_step": "이중 표적 전달체에서도 표적별 세포집단과 탈진 지표를 분리해 평가할 수 있다.",
       "concepts": [],
-      "type": "Research"
+      "type": "Research",
+      "abstract_excerpt": "T cell receptor (TCR)-based immunotherapy is limited by tumor antigen heterogeneity, which frequently leads to relapse. We developed a bispecific TCR-JANUS engager that functions synergistically …",
+      "abstract_url": "https://pubmed.ncbi.nlm.nih.gov/42715334/#abstract"
     }
   ]
 }

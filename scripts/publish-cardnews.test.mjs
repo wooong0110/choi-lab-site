@@ -34,7 +34,7 @@ test('calendar cutoff, archive year/quarter selection and safe card markup', () 
       addEventListener(event,fn){this[event]=fn;},setAttribute(){},querySelectorAll(){return [];}});
     return elements.get(id);
   }
-  const paper = {title:'<img src=x onerror=alert(1)>',rating:5,emoji:'<script>',doi:'10.1234/example',pubmed:'javascript:alert(1)'};
+  const paper = {title:'<img src=x onerror=alert(1)>',rating:5,emoji:'<script>',doi:'10.1234/example',pubmed:'javascript:alert(1)',what_they_did:['Method one.','Method two.'],abstract_excerpt:'Original English excerpt.',abstract_url:'https://pubmed.ncbi.nlm.nih.gov/123/#abstract',tldr:'한글 요약'};
   const context = {window:{CARDNEWS:['2026-05-31','2026-02-28','2026-02-27','2025-10-01'].map(date=>({date,papers:[paper]}))},
     document:{documentElement:{lang:'en'},getElementById:element,addEventListener(){}},URL,
     Date:class extends Date {constructor(...args){super(...(args.length?args:['2026-05-31T12:00:00']));}}};
@@ -43,6 +43,10 @@ test('calendar cutoff, archive year/quarter selection and safe card markup', () 
   assert.doesNotMatch(element('cardnews-week').innerHTML,/2026-02-27/);
   assert.match(element('cardnews-grid').innerHTML,/https:\/\/doi.org\/10.1234\/example/);
   assert.doesNotMatch(element('cardnews-grid').innerHTML,/<img|<script|javascript:/);
+  assert.match(element('cardnews-grid').innerHTML, /<dd>Method one\. Method two\.<\/dd>/);
+  assert.doesNotMatch(element('cardnews-grid').innerHTML, /<ul|<li/);
+  const detail = element('cardnews-grid').innerHTML.split('<div class="cn-detail" hidden>')[1];
+  assert.ok(detail.indexOf('Original English excerpt.') < detail.indexOf('한글 요약'));
   element('cardnews-period').click({target:{closest:()=>({getAttribute:()=> 'archive'})}});
   assert.match(element('cardnews-year').innerHTML,/2025/);
   assert.match(element('cardnews-week').innerHTML,/2026-02-27/);

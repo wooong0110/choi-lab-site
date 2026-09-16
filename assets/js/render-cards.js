@@ -75,12 +75,19 @@
     var badge = (p.emoji ? esc(p.emoji) + ' ' : '') + esc(p.domain || '');
     var metaBits = [p.journal, p.year, p.author, p.publication_date, p.type].filter(Boolean).map(esc).join(' · ');
 
-    // 'what they did'(목록) HTML — 빈 값이면 빈 문자열
+    // Match the other detail rows: plain text without bullets or indentation.
     var didHTML = (p.what_they_did && p.what_they_did.length)
-      ? '<dt>' + tr('🧪 what they did', '🧪 연구 방법') + '</dt><dd><ul class="cn-did">' +
-          p.what_they_did.map(function (b) { return '<li>' + esc(b) + '</li>'; }).join('') +
-          '</ul></dd>'
+      ? '<dt>' + tr('🧪 what they did', '🧪 연구 방법') + '</dt><dd>' +
+          p.what_they_did.map(esc).join(' ') + '</dd>'
       : '';
+
+    var abstractText = p.abstract || p.abstract_excerpt || '';
+    var abstractUrl = safeUrl(p.abstract_url) || safeUrl(p.pubmed);
+    var abstractHTML = '<div class="cn-abstract">' +
+      '<h4>' + (p.abstract ? 'Abstract' : tr('Abstract · excerpt', 'Abstract · 원문 발췌')) + '</h4>' +
+      (abstractText ? '<p lang="en">' + esc(abstractText) + '</p>' : '') +
+      (abstractUrl ? '<a href="' + esc(abstractUrl) + '" target="_blank" rel="noopener">' +
+        tr('Read full abstract ↗', '전체 Abstract 보기 ↗') + '</a>' : '') + '</div>';
 
     var rows = '';
     FIELDS.forEach(function (f) {
@@ -110,10 +117,12 @@
         '</div>' +
         '<h3 class="cn-title">' + esc(p.title) + '</h3>' +
         (metaBits ? '<div class="cn-metaline">' + metaBits + '</div>' : '') +
-        (p.tldr ? '<p class="cn-oneliner">' + esc(p.tldr) + '</p>' : '') +
+        (p.tldr ? '<p class="cn-oneliner cn-preview-summary">' + esc(p.tldr) + '</p>' : '') +
         '<span class="cn-toggle">' + tr('Details ▾', '자세히 ▾') + '</span>' +
       '</button>' +
       '<div class="cn-detail" hidden>' +
+        abstractHTML +
+        (p.tldr ? '<p class="cn-oneliner" lang="ko">' + esc(p.tldr) + '</p>' : '') +
         (rows ? '<dl>' + rows + '</dl>' : '') +
         concepts + linksHTML +
       '</div>' +
