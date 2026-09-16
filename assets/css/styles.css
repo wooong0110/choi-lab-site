@@ -571,6 +571,9 @@ section { padding: 76px 0; }
 .gallery-empty { text-align: center; padding: 64px 24px; border: 1px dashed var(--line); border-radius: var(--radius); background: var(--white); }
 .gallery-empty h2 { font-family: var(--serif); font-size: clamp(22px,3vw,30px); margin-bottom: 12px; }
 .gallery-empty p { color: var(--ink-soft); }
+.gallery-videos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 16px; }
+.gallery-videos video { display: block; width: 100%; max-height: 480px; aspect-ratio: 3 / 4; object-fit: contain; background: #111; border-radius: 8px; }
+@media (max-width: 480px) { .gallery-videos { grid-template-columns: 1fr; } }
 @media (min-width: 721px) and (max-width: 1000px) {
   .nav-links a { padding-inline: 8px; font-size: 13px; }
   .brand .name { font-size: 14px; }

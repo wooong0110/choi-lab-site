@@ -108,6 +108,8 @@ styles.css 맨 위 :root 의 색상 값만 조정하면 돼.
 2. assets/js/gallery-data.js의 images 배열에 사이트 내부 경로를 넣습니다. 첫 사진이 대표 사진입니다.
 3. 제목·날짜·본문을 확인하고 Commit → Push로 반영합니다.
 
+영상은 글의 `videos` 배열에 `{src: "assets/img/gallery/event/clip.mp4", webm: "assets/img/gallery/event/clip.webm", poster: "assets/img/gallery/event/clip-poster.jpg"}` 형식으로 추가합니다. MP4는 H.264/AAC, 선택 항목인 WebM은 VP9/Opus를 사용합니다. 영상은 재생 버튼을 누를 때 불러옵니다.
+
 한국어 제목·본문은 titleKo, bodyKo에 넣습니다. Google Drive 링크도 지원하지만 공유 권한과 외부 이미지 로딩 정책에 영향을 받으므로 사이트 내부 사진을 권장합니다.
 
 ------------------------------------------------------------------------

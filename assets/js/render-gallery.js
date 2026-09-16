@@ -91,6 +91,37 @@
         });
         body.appendChild(gallery);
       }
+      if (post.videos && post.videos.length) {
+        var videos = element('div', 'gallery-videos');
+        post.videos.forEach(function (clip, i) {
+          var url;
+          try { url = new URL(clip.src, location.href); } catch (e) { return; }
+          if (!/^(https?:|file:)$/.test(url.protocol)) return;
+          var video = element('video');
+          video.controls = true;
+          video.playsInline = true;
+          video.preload = 'none';
+          if (clip.webm) {
+            var webmUrl;
+            try { webmUrl = new URL(clip.webm, location.href); } catch (e) { webmUrl = null; }
+            if (webmUrl && /^(https?:|file:)$/.test(webmUrl.protocol)) {
+              var webm = element('source');
+              webm.src = webmUrl.href;
+              webm.type = 'video/webm';
+              video.appendChild(webm);
+            }
+          }
+          var mp4 = element('source');
+          mp4.src = url.href;
+          mp4.type = 'video/mp4';
+          video.appendChild(mp4);
+          if (clip.poster) video.poster = clip.poster;
+          video.setAttribute('aria-label', title + (ko ? ' — 영상 ' : ' — Video ') + (i + 1));
+          video.appendChild(element('p', '', ko ? '이 브라우저는 영상 재생을 지원하지 않습니다.' : 'Your browser does not support video playback.'));
+          videos.appendChild(video);
+        });
+        body.appendChild(videos);
+      }
       card.append(thumb, body);
       grid.appendChild(card);
     });

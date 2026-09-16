@@ -13,23 +13,23 @@
  * },
  */
 window.GALLERY = [
-{
-  "date": "2026-09-16",
-  "title": "jola maun silbi gimchi and melon and peter jiwoong parker",
-  "body": [],
-  "images": [
-    "assets/img/gallery/260916/IMG_0160.jpg",
-    "assets/img/gallery/260916/IMG_0182.jpg",
-    "assets/img/gallery/260916/IMG_0238.jpg",
-    "assets/img/gallery/260916/IMG_0242.jpg",
-    "assets/img/gallery/260916/IMG_0244.jpg"
-  ]
-},
   {
-    date: "2026-09-11",
-    title: "SeoMoon Sijang",
-    body: [],
-    images: [
+    "date": "2026-09-16",
+    "title": "jola maun silbi gimchi and melon and peter jiwoong parker",
+    "body": [],
+    "images": [
+      "assets/img/gallery/260916/IMG_0160.jpg",
+      "assets/img/gallery/260916/IMG_0182.jpg",
+      "assets/img/gallery/260916/IMG_0238.jpg",
+      "assets/img/gallery/260916/IMG_0242.jpg",
+      "assets/img/gallery/260916/IMG_0244.jpg"
+    ]
+  },
+  {
+    "date": "2026-09-11",
+    "title": "SeoMoon Sijang",
+    "body": [],
+    "images": [
       "assets/img/gallery/260911/KakaoTalk_20260911_181705593.jpg",
       "assets/img/gallery/260911/KakaoTalk_20260911_181705593_01.jpg",
       "assets/img/gallery/260911/KakaoTalk_20260911_181705593_02.jpg",
@@ -38,6 +38,43 @@ window.GALLERY = [
       "assets/img/gallery/260911/KakaoTalk_20260911_181705593_05.jpg",
       "assets/img/gallery/260911/KakaoTalk_20260911_181705593_06.jpg",
       "assets/img/gallery/260911/KakaoTalk_20260911_181705593_07.jpg"
+    ]
+  },
+  {
+    "date": "2026-09-01",
+    "title": "haidi rao 2nd try and jolla suceess",
+    "body": [],
+    "images": [
+      "assets/img/gallery/260901/IMG_0125.jpg",
+      "assets/img/gallery/260901/IMG_9796.jpg",
+      "assets/img/gallery/260901/IMG_9803.jpg",
+      "assets/img/gallery/260901/IMG_9825.png",
+      "assets/img/gallery/260901/IMG_9876.jpg",
+      "assets/img/gallery/260901/IMG_9877.jpg",
+      "assets/img/gallery/260901/IMG_9878.jpg",
+      "assets/img/gallery/260901/IMG_9879.jpg"
+    ],
+    "videos": [
+      {
+        "src": "assets/img/gallery/260901/IMG_0151.mp4",
+        "poster": "assets/img/gallery/260901/IMG_0151-poster.jpg",
+        "webm": "assets/img/gallery/260901/IMG_0151.webm"
+      },
+      {
+        "src": "assets/img/gallery/260901/IMG_9823.mp4",
+        "poster": "assets/img/gallery/260901/IMG_9823-poster.jpg",
+        "webm": "assets/img/gallery/260901/IMG_9823.webm"
+      },
+      {
+        "src": "assets/img/gallery/260901/IMG_9868.mp4",
+        "poster": "assets/img/gallery/260901/IMG_9868-poster.jpg",
+        "webm": "assets/img/gallery/260901/IMG_9868.webm"
+      },
+      {
+        "src": "assets/img/gallery/260901/IMG_9869.mp4",
+        "poster": "assets/img/gallery/260901/IMG_9869-poster.jpg",
+        "webm": "assets/img/gallery/260901/IMG_9869.webm"
+      }
     ]
   }
 ];
