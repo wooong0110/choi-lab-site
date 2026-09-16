@@ -159,4 +159,41 @@ choi-lab/
       └─ render-pubs.js         # 논문 화면에 그리는 부분 (건드릴 필요 없음)
 ```
 
-상단 메뉴는 **Home · Members · Publications · Gallery · Contact** 다섯 개로 이루어져 있습니다. 논문은 한 페이지에 10편씩 나뉘어 보이고, 각 논문 항목은 제목·저자·저널·연도로 구성됩니다.
+상단 메뉴는 **Home · Members · Publications · Gallery · Note · Contact**입니다. Publications는 연구실의 출판 논문, Note는 관련 분야 최신논문 카드뉴스입니다.
+
+## 최신논문 카드뉴스 (Note)
+
+`note.html`은 [참고 사이트의 Note](https://github.com/kkonoo/halab-site/blob/main/note.html)와 같은 카드 구성으로 만들었습니다. 카드 CSS와 렌더러를 이 사이트의 테마 및 JSON 형식에 맞게 조정했습니다.
+
+- **Recent 3 months**: 방문일에서 달력 기준 3개월 전 같은 날짜 이후의 주차. 월말은 해당 월의 마지막 날로 맞춥니다.
+- **Archive**: 그 이전 주차를 연도 → 분기 → 주차 순으로 선택합니다. 기간 구분은 표시만 바꾸며 과거 데이터를 삭제하지 않습니다.
+- 주차 안에서 분야 필터·검색, 관련도 순 상위 10편·더 보기, 카드 상세 펼치기, DOI/PubMed 링크를 지원합니다.
+- 검색 범위와 수집 한계는 원본 JSON의 `notice` 그대로 표시합니다. 별점은 연구실 관련도이며, 적용 제안은 추론입니다.
+
+### JSON 추가 → 사이트 반영
+
+Node.js로 저장소에서 실행합니다. 별도 패키지 설치는 필요 없습니다.
+
+```powershell
+# 드라이브의 모든 주차를 병합 (이전 사이트 주차도 보존)
+node scripts/publish-cardnews.mjs "G:/내 드라이브/choi-lab/cardnews-kit/runs"
+
+# 한 주만 추가하거나 수정할 때
+node scripts/publish-cardnews.mjs "G:/내 드라이브/choi-lab/cardnews-kit/runs/2026-09-15.json"
+
+# 변경 없이 검증
+node scripts/publish-cardnews.mjs "G:/내 드라이브/choi-lab/cardnews-kit/runs" --dry-run
+
+# 사이트에 보관된 JSON만으로 다시 생성
+node scripts/publish-cardnews.mjs
+```
+
+`node`를 찾지 못하면 이 컴퓨터에서는 `C:/Users/USER/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe`를 사용합니다.
+
+원본은 `assets/data/cardnews/YYYY-MM-DD.json`에 보관되고, 페이지가 읽는 `assets/js/cards-data.js`가 자동 생성됩니다. **cards-data.js는 직접 수정하지 마세요.** 같은 날짜의 입력은 해당 주차를 갱신하며, 다른 날짜는 그대로 보존합니다. 입력 전체를 검증한 후 저장하므로 JSON 오류가 있으면 기존 결과를 바꾸지 않습니다.
+
+JSON 형식은 `assets/data/cardnews/2026-09-15.json`을 참고합니다. 최상위는 `date`, `count`, `notice`, `papers`이고, `count`는 실제 편수와 같아야 합니다. 논문별 `title`과 정수 `rating`(0–5)이 필수입니다. DOI는 `10.…`와 `https://doi.org/…`를 모두 지원합니다.
+
+2026-09-16에 기존 월요일 오후 2시 예약 작업을 **JSON 저장 → 읽기용 HTML 생성 → 사이트 데이터 병합** 흐름으로 갱신했습니다. 자동 게시와 git push는 하지 않습니다. 완료 후 GitHub Desktop에서 변경 내용을 검토하고 **Commit → Push origin**하면 사이트에 반영됩니다. 최초 Note 추가 시 HTML·CSS·JS도 함께 올리고, 이후 매주 갱신은 JSON과 cards-data.js를 함께 올립니다.
+
+검증: `node --test scripts/publish-cardnews.test.mjs` (과거 데이터 보존, 재실행, 잘못된 입력, 월말 경계, Archive 선택, 링크·문자열 처리).
