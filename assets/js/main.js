@@ -88,6 +88,7 @@
     ['M.S. Student', 'M.S. Student', '석사과정'],
     ['SuYeon Lee', 'SuYeon Lee', '이수연'],
     ['JiMin Lim', 'JiMin Lim', '임지민'],
+    ['InA Bae', 'InA Bae', '배인아'],
     ['JinHee Park, M.S.', 'JinHee Park, M.S.', '박진희'],
     ['2026– | Ph.D. in Biomedical Science, KNU', '2026– | Ph.D. in Biomedical Science, KNU', '2026– | 경북대학교 의과학과 박사과정'],
     ['2021–2023 | M.S. in Brain & Cognitive Sciences, DGIST', '2021–2023 | M.S. in Brain & Cognitive Sciences, DGIST', '2021–2023 | 대구경북과학기술원(DGIST) 뇌·인지과학 석사'],
