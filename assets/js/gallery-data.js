@@ -115,5 +115,47 @@ window.GALLERY = [
         "webm": "assets/img/gallery/260901/IMG_9869.webm"
       }
     ]
+  },
+  {
+    "date": "2026-08-25",
+    "title": "I love Choi-DDS lab",
+    "body": [],
+    "images": [
+      "assets/img/gallery/260825/IMG_0116.jpg",
+      "assets/img/gallery/260825/IMG_0117.jpg",
+      "assets/img/gallery/260825/IMG_0167.jpg",
+      "assets/img/gallery/260825/IMG_0174.jpg",
+      "assets/img/gallery/260825/IMG_0294.jpg",
+      "assets/img/gallery/260825/IMG_0299.png",
+      "assets/img/gallery/260825/IMG_0299-2.png",
+      "assets/img/gallery/260825/IMG_9775.jpg",
+      "assets/img/gallery/260825/IMG_9781.jpg",
+      "assets/img/gallery/260825/IMG_9783.jpg",
+      "assets/img/gallery/260825/IMG_9788.jpg",
+      "assets/img/gallery/260825/IMG_9793.jpg",
+      "assets/img/gallery/260825/IMG_9800.jpg",
+      "assets/img/gallery/260825/IMG_9808.jpg",
+      "assets/img/gallery/260825/IMG_9814.jpg",
+      "assets/img/gallery/260825/IMG_9835.jpg",
+      "assets/img/gallery/260825/IMG_9866.png",
+      "assets/img/gallery/260825/IMG_9866-2.png"
+    ],
+    "videos": [
+      {
+        "src": "assets/img/gallery/260825/IMG_0089.mp4",
+        "poster": "assets/img/gallery/260825/IMG_0089-poster.jpg",
+        "webm": "assets/img/gallery/260825/IMG_0089.webm"
+      },
+      {
+        "src": "assets/img/gallery/260825/IMG_0222.mp4",
+        "poster": "assets/img/gallery/260825/IMG_0222-poster.jpg",
+        "webm": "assets/img/gallery/260825/IMG_0222.webm"
+      },
+      {
+        "src": "assets/img/gallery/260825/IMG_0223.mp4",
+        "poster": "assets/img/gallery/260825/IMG_0223-poster.jpg",
+        "webm": "assets/img/gallery/260825/IMG_0223.webm"
+      }
+    ]
   }
 ];
