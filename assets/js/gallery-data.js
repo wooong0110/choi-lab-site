@@ -14,6 +14,26 @@
  */
 window.GALLERY = [
   {
+    "date": "2026-09-17",
+    "title": "SooYeon's Moving Day & Jiwoong is JangChen (Power Angry)",
+    "body": [],
+    "images": [
+      "assets/img/gallery/260917/IMG_0282.jpg",
+      "assets/img/gallery/260917/IMG_0285.jpg",
+      "assets/img/gallery/260917/IMG_0286.jpg",
+      "assets/img/gallery/260917/IMG_0289.jpg",
+      "assets/img/gallery/260917/IMG_0292.jpg",
+      "assets/img/gallery/260917/IMG_0293.jpg"
+    ],
+    "videos": [
+      {
+        "src": "assets/img/gallery/260917/IMG_0288.mp4",
+        "poster": "assets/img/gallery/260917/IMG_0288-poster.jpg",
+        "webm": "assets/img/gallery/260917/IMG_0288.webm"
+      }
+    ]
+  },
+  {
     "date": "2026-09-16",
     "title": "jola maun silbi gimchi and melon and peter jiwoong parker",
     "body": [],
