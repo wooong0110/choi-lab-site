@@ -1,6 +1,6 @@
 # Gallery likes and comments
 
-The GitHub Pages site calls this Cloudflare Worker, which stores public per-photo likes and comments in D1. Likes are repeatable; each click has an idempotency key so a network retry does not add a second like. Comments use nicknames without accounts and are rendered as plain text. They are public and do not verify identity.
+The GitHub Pages site calls this Cloudflare Worker, which stores public per-photo and per-video likes and comments in D1. Videos use the canonical `clip.src` path, including when a browser plays the WebM alternative. Existing photo records and API field names stay compatible. Likes are repeatable; each click has an idempotency key so a network retry does not add a second like. Comments use nicknames without accounts and are rendered as plain text. They are public and do not verify identity.
 
 ## Development
 
@@ -17,7 +17,7 @@ Use a local API URL in `assets/js/gallery-social-config.js` when previewing; res
 
 ## Deploy and add photos
 
-After adding gallery photos, run `node sync-photos.mjs` and deploy again so the API accepts the new photo paths. Preserve photo paths to preserve their reactions.
+After adding gallery photos or videos, run `node sync-photos.mjs` and deploy again so the API accepts the new media paths. Preserve paths to preserve their reactions.
 
 ```sh
 npx wrangler login

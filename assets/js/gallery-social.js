@@ -85,7 +85,7 @@
         nextCursor = data.next; more.hidden = !nextCursor;
         message('');
       } catch (error) {
-        if (stamp === version) message(tr('불러오지 못했어요. 사진을 다시 열어주세요.', 'Could not load. Please reopen this photo.'));
+        if (stamp === version) message(tr('불러오지 못했어요. 페이지를 새로고침해주세요.', 'Could not load. Please refresh the page.'));
       } finally { if (stamp === version) more.disabled = false; }
     }
     async function sendLikes(photo) {
@@ -104,7 +104,7 @@
           value.queue = [];
           if (current === photo) {
             drawLikes();
-            message(tr('좋아요 저장을 확인하지 못했어요. 사진을 다시 열어 확인해주세요.', 'Could not confirm your likes. Reopen the photo to check.'));
+            message(tr('좋아요 저장을 확인하지 못했어요. 새로고침해서 확인해주세요.', 'Could not confirm your likes. Refresh the page to check.'));
           }
           break;
         }

@@ -155,7 +155,14 @@
           if (clip.poster) video.poster = clip.poster;
           video.setAttribute('aria-label', title + (ko ? ' — 영상 ' : ' — Video ') + (i + 1));
           video.appendChild(element('p', '', ko ? '이 브라우저는 영상 재생을 지원하지 않습니다.' : 'Your browser does not support video playback.'));
-          videos.appendChild(video);
+          var videoItem = element('div', 'gallery-video-item');
+          videoItem.appendChild(video);
+          if (window.GALLERY_API && window.createGallerySocial) {
+            var videoSocial = window.createGallerySocial();
+            videoItem.appendChild(videoSocial.element);
+            videoSocial.show(url.href);
+          }
+          videos.appendChild(videoItem);
         });
         body.appendChild(videos);
       }
