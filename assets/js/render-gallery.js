@@ -8,14 +8,37 @@
   viewer.className = 'gallery-viewer';
   var close = document.createElement('button');
   close.type = 'button';
+  var previous = element('button', 'gallery-previous', '‹');
+  var next = element('button', 'gallery-next', '›');
+  previous.type = next.type = 'button';
+  var counter = element('span', 'gallery-counter');
+  counter.setAttribute('aria-live', 'polite');
+  var activePhotos = [];
+  var activeIndex = 0;
   var fullPhoto = document.createElement('img');
-  viewer.append(close, fullPhoto);
+  viewer.append(close, fullPhoto, previous, next, counter);
   document.body.appendChild(viewer);
   close.addEventListener('click', function () { viewer.close(); });
   viewer.addEventListener('click', function (event) {
     if (event.target === viewer) viewer.close();
   });
-  viewer.addEventListener('close', function () { fullPhoto.removeAttribute('src'); });
+  viewer.addEventListener('close', function () { fullPhoto.removeAttribute('src'); activePhotos = []; });
+  function showPhoto(index) {
+    if (!activePhotos.length) return;
+    activeIndex = (index + activePhotos.length) % activePhotos.length;
+    fullPhoto.alt = activePhotos[activeIndex].alt;
+    fullPhoto.src = activePhotos[activeIndex].src;
+    counter.textContent = (activeIndex + 1) + ' / ' + activePhotos.length;
+    previous.hidden = next.hidden = activePhotos.length < 2;
+  }
+  previous.addEventListener('click', function () { showPhoto(activeIndex - 1); });
+  next.addEventListener('click', function () { showPhoto(activeIndex + 1); });
+  viewer.addEventListener('keydown', function (event) {
+    if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+      event.preventDefault();
+      showPhoto(activeIndex + (event.key === 'ArrowLeft' ? -1 : 1));
+    }
+  });
 
   function element(tag, className, text) {
     var el = document.createElement(tag);
@@ -23,7 +46,7 @@
     if (text !== undefined) el.textContent = text;
     return el;
   }
-  function photo(src, alt, cover) {
+  function photo(src, alt, cover, album) {
     // Only local paths and HTTP(S) images; never executable URL schemes.
     var url;
     try { url = new URL(src, location.href); } catch (e) { return null; }
@@ -41,13 +64,17 @@
       ? 'https://drive.google.com/thumbnail?id=' + encodeURIComponent(driveId) + '&sz=w1600'
       : url.href;
     link.href = img.src;
+    var index = album.length;
+    album.push({ src: img.src, alt: alt });
     link.addEventListener('click', function (event) {
       event.preventDefault();
       var ko = document.documentElement.lang === 'ko';
       close.textContent = ko ? '닫기 ×' : 'Close ×';
+      previous.setAttribute('aria-label', ko ? '이전 사진' : 'Previous photo');
+      next.setAttribute('aria-label', ko ? '다음 사진' : 'Next photo');
       viewer.setAttribute('aria-label', ko ? '사진 확대 보기' : 'Photo viewer');
-      fullPhoto.alt = alt;
-      fullPhoto.src = img.src;
+      activePhotos = album;
+      showPhoto(index);
       viewer.showModal();
     });
     img.alt = alt;
@@ -70,10 +97,11 @@
       var title = (ko ? post.titleKo || post.title : post.title || post.titleKo) || '';
       var paragraphs = (ko ? post.bodyKo || post.body : post.body || post.bodyKo) || [];
       var images = post.images || (post.image ? [post.image] : []);
+      var album = [];
       var card = element('article', 'news-card');
       var thumb = element('div', 'thumb');
       if (images.length) {
-        var cover = photo(images[0], title + (ko ? ' — 대표 사진 확대 보기' : ' — Enlarge cover photo'), true);
+        var cover = photo(images[0], title + (ko ? ' — 대표 사진 확대 보기' : ' — Enlarge cover photo'), true, album);
         if (cover) thumb.appendChild(cover);
       }
       var overlay = element('div', 'ov');
@@ -86,7 +114,7 @@
       if (images.length > 1) {
         var gallery = element('div', 'post-gallery');
         images.slice(1).forEach(function (src, i) {
-          var link = photo(src, title + (ko ? ' — 사진 ' : ' — Photo ') + (i + 2), false);
+          var link = photo(src, title + (ko ? ' — 사진 ' : ' — Photo ') + (i + 2), false, album);
           if (link) gallery.appendChild(link);
         });
         body.appendChild(gallery);

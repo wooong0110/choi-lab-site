@@ -573,6 +573,11 @@ section { padding: 76px 0; }
 .gallery-viewer::backdrop { background: rgba(0,0,0,.85); }
 .gallery-viewer > img { display: block; max-width: 90vw; max-height: 78vh; object-fit: contain; }
 .gallery-viewer > button { position: absolute; right: 12px; top: 8px; padding: 6px 12px; border: 1px solid #aaa; border-radius: 6px; background: #222; color: #fff; cursor: pointer; }
+.gallery-viewer > .gallery-previous, .gallery-viewer > .gallery-next { top: 50%; transform: translateY(-50%); width: 44px; height: 56px; padding: 0; font-size: 36px; background: rgba(0,0,0,.7); }
+.gallery-viewer > .gallery-previous { left: 12px; right: auto; }
+.gallery-viewer > .gallery-next { right: 12px; }
+.gallery-viewer > button:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+.gallery-counter { position: absolute; top: 16px; left: 16px; font-size: 14px; }
 #gallery-grid .body { overflow-wrap: anywhere; }
 .gallery-empty { text-align: center; padding: 64px 24px; border: 1px dashed var(--line); border-radius: var(--radius); background: var(--white); }
 .gallery-empty h2 { font-family: var(--serif); font-size: clamp(22px,3vw,30px); margin-bottom: 12px; }
