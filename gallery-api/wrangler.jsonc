@@ -1,0 +1,11 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "choi-lab-gallery",
+  "main": "worker.js",
+  "compatibility_date": "2026-09-18",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "observability": { "enabled": true, "head_sampling_rate": 0.1 },
+  "vars": { "ALLOWED_ORIGIN": "https://wooong0110.github.io" },
+  "d1_databases": [{ "binding": "DB", "database_name": "choi-lab-gallery", "database_id": "71a2d592-ddf6-4a96-b1eb-a0ea1e39a7a3" }]
+}

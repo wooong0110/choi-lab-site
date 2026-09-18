@@ -16,13 +16,20 @@
   var activePhotos = [];
   var activeIndex = 0;
   var fullPhoto = document.createElement('img');
-  viewer.append(close, fullPhoto, previous, next, counter);
+  var stage = element('div', 'gallery-viewer-stage');
+  stage.append(fullPhoto, previous, next);
+  var social = window.GALLERY_API && window.createGallerySocial ? window.createGallerySocial() : null;
+  viewer.append(close, stage, counter);
+  if (social) viewer.appendChild(social.element);
   document.body.appendChild(viewer);
   close.addEventListener('click', function () { viewer.close(); });
   viewer.addEventListener('click', function (event) {
     if (event.target === viewer) viewer.close();
   });
-  viewer.addEventListener('close', function () { fullPhoto.removeAttribute('src'); activePhotos = []; });
+  viewer.addEventListener('close', function () {
+    fullPhoto.removeAttribute('src'); activePhotos = [];
+    if (social) social.close();
+  });
   function showPhoto(index) {
     if (!activePhotos.length) return;
     activeIndex = (index + activePhotos.length) % activePhotos.length;
@@ -30,10 +37,12 @@
     fullPhoto.src = activePhotos[activeIndex].src;
     counter.textContent = (activeIndex + 1) + ' / ' + activePhotos.length;
     previous.hidden = next.hidden = activePhotos.length < 2;
+    if (social) social.show(fullPhoto.src);
   }
   previous.addEventListener('click', function () { showPhoto(activeIndex - 1); });
   next.addEventListener('click', function () { showPhoto(activeIndex + 1); });
   viewer.addEventListener('keydown', function (event) {
+    if (/^(INPUT|TEXTAREA|SELECT)$/.test(event.target.tagName) || event.target.isContentEditable) return;
     if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
       event.preventDefault();
       showPhoto(activeIndex + (event.key === 'ArrowLeft' ? -1 : 1));

@@ -1,0 +1,14 @@
+{
+  "name": "choi-lab-gallery-api",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev --port 8787 --var ALLOWED_ORIGIN:http://localhost:8765",
+    "test": "node --test api.test.mjs",
+    "deploy": "node sync-photos.mjs && wrangler deploy",
+    "types": "wrangler types"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20260918.1",
+    "wrangler": "^4.134.0"
+  }
+}
