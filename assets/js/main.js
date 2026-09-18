@@ -84,7 +84,6 @@
     ['2012–2016 | B.S. in Biomedical Engineering, Korea University', '2012–2016 | B.S. in Biomedical Engineering, Korea University', '2012–2016 | 고려대학교 바이오의공학 학사'],
     ['Research interests: Drug delivery systems, biomaterials, liposomes, exosomes, hydrogels, cancer immunotherapy', 'Research interests: Drug delivery systems, biomaterials, liposomes, exosomes, hydrogels, cancer immunotherapy', '연구 관심 분야: 약물전달 시스템, 바이오소재, 리포솜, 엑소좀, 하이드로젤, 암 면역치료'],
     ['👩‍🎓 Graduate Students', '👩‍🎓 Graduate Students', '👩‍🎓 대학원생'],
-    ['Coworkers', 'Coworkers', '공동연구자'],
     ['PhD Student', 'PhD Student', '박사과정'],
     ['M.S. Student', 'M.S. Student', '석사과정'],
     ['SuYeon Lee', 'SuYeon Lee', '이수연'],
