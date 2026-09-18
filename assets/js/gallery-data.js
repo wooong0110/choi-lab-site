@@ -14,6 +14,23 @@
  */
 window.GALLERY = [
   {
+    "date": "2026-09-18",
+    "title": "we are waiting for J.M's injection signal",
+    "body": [],
+    "images": [
+      "assets/img/gallery/260918/IMG_0304.jpg",
+      "assets/img/gallery/260918/IMG_0305.jpg",
+      "assets/img/gallery/260918/IMG_0306.jpg",
+      "assets/img/gallery/260918/IMG_0308.jpg",
+      "assets/img/gallery/260918/IMG_0310.jpg",
+      "assets/img/gallery/260918/IMG_0311.jpg",
+      "assets/img/gallery/260918/IMG_0312.jpg",
+      "assets/img/gallery/260918/IMG_0314.jpg",
+      "assets/img/gallery/260918/IMG_0315.jpg",
+      "assets/img/gallery/260918/IMG_0316.jpg"
+    ]
+  },
+  {
     "date": "2026-09-17",
     "title": "SooYeon's Moving Day & Jiwoong is JangChen (Power Angry)",
     "body": [],
