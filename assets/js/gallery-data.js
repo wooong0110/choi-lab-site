@@ -15,6 +15,33 @@
 window.GALLERY = [
   {
     "date": "2026-09-18",
+    "title": "SooYeon's alone trip in Gongju (Our Photomanager)",
+    "body": [],
+    "images": [
+      "assets/img/gallery/260918_2/IMG_0317.jpg",
+      "assets/img/gallery/260918_2/IMG_0318.jpg",
+      "assets/img/gallery/260918_2/IMG_0319.jpg",
+      "assets/img/gallery/260918_2/IMG_0320.jpg",
+      "assets/img/gallery/260918_2/IMG_0321.jpg",
+      "assets/img/gallery/260918_2/IMG_0322.jpg",
+      "assets/img/gallery/260918_2/IMG_0323.jpg",
+      "assets/img/gallery/260918_2/IMG_0324.jpg",
+      "assets/img/gallery/260918_2/IMG_0325.jpg",
+      "assets/img/gallery/260918_2/IMG_0326.jpg",
+      "assets/img/gallery/260918_2/IMG_0327.jpg",
+      "assets/img/gallery/260918_2/IMG_0328.jpg",
+      "assets/img/gallery/260918_2/IMG_0329.jpg",
+      "assets/img/gallery/260918_2/IMG_0330.jpg",
+      "assets/img/gallery/260918_2/IMG_0331.jpg",
+      "assets/img/gallery/260918_2/IMG_0332.jpg",
+      "assets/img/gallery/260918_2/IMG_0333.jpg",
+      "assets/img/gallery/260918_2/IMG_0334.jpg",
+      "assets/img/gallery/260918_2/IMG_0335.jpg",
+      "assets/img/gallery/260918_2/IMG_0336.jpg"
+    ]
+  },
+  {
+    "date": "2026-09-18",
     "title": "we are waiting for J.M's injection signal",
     "body": [],
     "images": [
