@@ -1,4 +1,5 @@
 (function () {
+  var states = new Map();
   window.createGallerySocial = function (options) {
     options = options || {};
     var api = window.GALLERY_API;
@@ -8,7 +9,6 @@
     var nextCursor = null;
     var busyComment = false;
     var pendingComment = null;
-    var states = new Map();
     var like = make('button', 'gallery-like');
     like.type = 'button';
     var row = make('div', 'gallery-like-row');
@@ -41,6 +41,7 @@
     var more = make('button', 'gallery-comments-more'); more.type = 'button'; more.hidden = true;
     discussion.append(form, status, list, more);
     panel.append(row, discussion);
+    if (options.likeOnly) { heading.remove(); discussion.remove(); panel.classList.add('gallery-photo-reaction'); }
 
     function make(tag, cls, text) {
       var el = document.createElement(tag);
@@ -64,10 +65,18 @@
     }
     function drawLikes() {
       if (!current) return;
-      var value = state(current);
-      like.textContent = '♥ ' + (value.likes === null ? '—' : value.likes + value.queue.length);
-      like.setAttribute('aria-label', tr('좋아요 추가', 'Add a like'));
-      like.disabled = value.likes === null;
+      like.dataset.galleryLike = current;
+      updateLikes(current);
+    }
+    function updateLikes(photo) {
+      var value = state(photo);
+      var buttons = Array.from(document.querySelectorAll('[data-gallery-like]')).filter(function (button) { return button.dataset.galleryLike === photo; });
+      if (current === photo && !buttons.includes(like)) buttons.push(like);
+      buttons.forEach(function (button) {
+        button.textContent = '♥ ' + (value.likes === null ? '—' : value.likes + value.queue.length);
+        button.setAttribute('aria-label', tr('좋아요 추가', 'Add a like'));
+        button.disabled = value.likes === null;
+      });
     }
     function renderComments(comments, append) {
       if (!append) list.replaceChildren();
@@ -108,9 +117,11 @@
           try { data = await request('/like', payload); }
           catch (error) { data = await request('/like', payload); }
           value.queue.shift(); value.likes = Math.max(value.likes || 0, data.likes);
+          updateLikes(photo);
           if (current === photo) { drawLikes(); message(''); }
         } catch (error) {
           value.queue = [];
+          updateLikes(photo);
           if (current === photo) {
             drawLikes();
             message(tr('좋아요 저장을 확인하지 못했어요. 새로고침해서 확인해주세요.', 'Could not confirm your likes. Refresh the page to check.'));
@@ -120,7 +131,8 @@
       }
       value.sending = false;
     }
-    like.addEventListener('click', function () {
+    like.addEventListener('click', function (event) {
+      event.preventDefault(); event.stopPropagation();
       if (!current || like.disabled) return;
       state(current).queue.push(crypto.randomUUID()); drawLikes();
       void sendLikes(current);
@@ -160,7 +172,7 @@
         message(tr('불러오는 중…', 'Loading…')); drawLikes();
         void load(false);
       },
-      close: function () { version++; current = null; }
+      close: function () { version++; current = null; like.removeAttribute('data-gallery-like'); }
     };
   };
 })();

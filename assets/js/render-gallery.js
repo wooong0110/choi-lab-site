@@ -67,7 +67,8 @@
       driveId = match ? match[1] : url.searchParams.get('id');
       if (!driveId || !/^[\w-]+$/.test(driveId)) return null;
     }
-    var link = element('a', cover ? 'gallery-cover' : '');
+    var frame = element('div', cover ? 'gallery-photo gallery-cover' : 'gallery-photo');
+    var link = element('a', 'gallery-photo-link');
     var img = element('img');
     img.src = driveId
       ? 'https://drive.google.com/thumbnail?id=' + encodeURIComponent(driveId) + '&sz=w1600'
@@ -96,7 +97,27 @@
         : 'Photo unavailable.'));
     });
     link.appendChild(img);
-    return link;
+    frame.appendChild(link);
+    if (window.GALLERY_API && window.createGallerySocial) {
+      var reaction = window.createGallerySocial({ likeOnly: true });
+      frame.appendChild(reaction.element);
+      var loaded = false;
+      function loadReaction() {
+        if (loaded) return;
+        loaded = true;
+        reaction.show(img.src);
+      }
+      frame.addEventListener('mouseenter', loadReaction);
+      frame.addEventListener('focusin', loadReaction);
+      // Touch screens have no hover: fetch when the photo enters the viewport.
+      if (matchMedia('(hover: none)').matches) {
+        var observer = new IntersectionObserver(function (entries) {
+          if (entries.some(function (entry) { return entry.isIntersecting; })) { loadReaction(); observer.disconnect(); }
+        });
+        observer.observe(frame);
+      }
+    }
+    return frame;
   }
   function render() {
     var ko = document.documentElement.lang === 'ko';
