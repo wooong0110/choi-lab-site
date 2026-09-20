@@ -158,7 +158,7 @@
           var videoItem = element('div', 'gallery-video-item');
           videoItem.appendChild(video);
           if (window.GALLERY_API && window.createGallerySocial) {
-            var videoSocial = window.createGallerySocial();
+            var videoSocial = window.createGallerySocial({ collapsed: true });
             videoItem.appendChild(videoSocial.element);
             videoSocial.show(url.href);
           }

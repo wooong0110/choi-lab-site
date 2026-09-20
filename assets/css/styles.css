@@ -579,24 +579,45 @@ section { padding: 76px 0; }
 .gallery-viewer-stage > .gallery-next { right: 4px; }
 .gallery-viewer button:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
 .gallery-counter { position: absolute; top: 16px; left: 16px; font-size: 14px; }
-.gallery-social { width: min(640px, 86vw); margin: 18px auto 4px; padding: 0 4px; color: #f5f5f5; }
-.gallery-social button { border: 1px solid #777; border-radius: 8px; padding: 8px 14px; background: #303030; color: #fff; cursor: pointer; font: inherit; }
+ .gallery-social { width: min(640px, 86vw); margin: 10px auto 0; color: #f5f5f5; }
+.gallery-social button { border: 1px solid #666; border-radius: 6px; padding: 5px 8px; background: #303030; color: #fff; cursor: pointer; font: inherit; font-size: 12px; }
 .gallery-social button:disabled { opacity: .55; cursor: wait; }
-.gallery-like-row { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; }
-.gallery-social .gallery-like { background: #773447; border-color: #d6879d; min-height: 44px; }
-.gallery-like-hint, .gallery-social-status { font-size: 12px; color: #ccc; }
-.gallery-social h3 { font-size: 16px; margin: 18px 0 10px; }
-.gallery-comment-form { display: grid; gap: 10px; }
-.gallery-comment-form label { display: grid; gap: 4px; font-size: 12px; }
-.gallery-comment-form input, .gallery-comment-form textarea { width: 100%; box-sizing: border-box; background: #222; color: #fff; border: 1px solid #777; border-radius: 6px; padding: 9px; font: inherit; font-size: 16px; }
-.gallery-comment-form textarea { resize: vertical; }
-.gallery-comment-form > button { justify-self: end; }
-.gallery-social-status { margin: 8px 0; }
-.gallery-comment { border-top: 1px solid #444; padding: 12px 0; }
-.gallery-comment-byline { display: flex; flex-wrap: wrap; gap: 8px; font-size: 13px; }
-.gallery-comment time { color: #aaa; font-size: 11px; }
-.gallery-comment p { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 14px; margin-top: 4px; }
-.gallery-no-comments { color: #bbb; font-size: 13px; }
+.gallery-like-row { display: flex; align-items: center; gap: 14px; min-height: 32px; }
+.gallery-social .gallery-like { background: none; border: 0; padding: 4px 2px; color: #f4a6bb; font-size: 16px; min-height: 32px; }
+.gallery-social .gallery-comment-heading { font-size: 12px; margin: 0; background: none; border: 0; padding: 4px 0; color: #ccc; }
+.gallery-discussion { display: grid; grid-template-rows: auto auto minmax(0, 1fr) auto; min-height: 0; gap: 4px; }
+.gallery-discussion[hidden] { display: none; }
+.gallery-comment-form { display: grid; grid-template-columns: 80px minmax(0, 1fr) auto; gap: 5px; align-items: start; margin: 4px 0; }
+.gallery-comment-form label { min-width: 0; }
+.gallery-comment-form label > span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.gallery-comment-form input, .gallery-comment-form textarea { display: block; width: 100%; height: 34px; box-sizing: border-box; background: #222; color: #fff; border: 1px solid #666; border-radius: 5px; padding: 6px; font: inherit; font-size: 13px; }
+.gallery-comment-form textarea { resize: none; }
+.gallery-comment-form > button { height: 34px; }
+.gallery-social-status { margin: 2px 0; font-size: 11px; color: #ccc; }
+.gallery-social-status:empty { display: none; }
+.gallery-comments { overflow-y: auto; min-height: 0; overscroll-behavior: contain; }
+.gallery-comment { border-top: 1px solid #444; padding: 6px 0; }
+.gallery-comment-byline { display: flex; flex-wrap: wrap; gap: 6px; font-size: 12px; }
+.gallery-comment time { color: #aaa; font-size: 10px; }
+.gallery-comment p { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 12px; margin-top: 2px; }
+.gallery-no-comments { color: #bbb; font-size: 12px; }
+/* Only the comment list scrolls; the photo and composer stay in view. */
+.gallery-viewer[open] {
+  display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 16px;
+  width: min(1180px, 96vw); height: min(820px, 94dvh); max-height: 94dvh;
+  box-sizing: border-box; overflow: hidden;
+}
+.gallery-viewer .gallery-viewer-stage { min-width: 0; min-height: 0; display: grid; place-items: center; }
+.gallery-viewer .gallery-viewer-stage > img { width: 100%; height: 100%; max-width: 100%; max-height: 100%; min-height: 0; }
+.gallery-viewer > .gallery-social { width: 100%; min-width: 0; min-height: 0; margin: 0; padding: 0; display: grid; grid-template-rows: auto minmax(0, 1fr); }
+@media (max-width: 760px) {
+  .gallery-viewer[open] { grid-template-columns: minmax(0, 1fr); grid-template-rows: minmax(0, 1fr) minmax(150px, 28%); gap: 6px; padding: 44px 10px 10px; height: 96dvh; max-height: 96dvh; }
+  .gallery-comment-form { grid-template-columns: 78px minmax(0, 1fr) auto; }
+  .gallery-comment-form input, .gallery-comment-form textarea { font-size: 16px; }
+}
+@media (max-height: 500px) and (min-width: 600px) {
+  .gallery-viewer[open] { grid-template-columns: minmax(0, 1fr) 280px; grid-template-rows: minmax(0, 1fr); }
+}
 #gallery-grid .body { overflow-wrap: anywhere; }
 .gallery-empty { text-align: center; padding: 64px 24px; border: 1px dashed var(--line); border-radius: var(--radius); background: var(--white); }
 .gallery-empty h2 { font-family: var(--serif); font-size: clamp(22px,3vw,30px); margin-bottom: 12px; }
@@ -604,7 +625,8 @@ section { padding: 76px 0; }
 .gallery-videos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 16px; }
 .gallery-videos video { display: block; width: 100%; max-height: 480px; aspect-ratio: 3 / 4; object-fit: contain; background: #111; border-radius: 8px; }
 .gallery-video-item { min-width: 0; background: #111; border-radius: 8px; overflow: hidden; }
-.gallery-video-item .gallery-social { width: 100%; box-sizing: border-box; padding: 14px; margin: 0; }
+.gallery-video-item .gallery-social { width: 100%; box-sizing: border-box; padding: 4px 10px; margin: 0; }
+.gallery-video-item .gallery-discussion { max-height: 240px; }
 .gallery-video-item .gallery-social h3 { color: #f5f5f5; }
 .news-card .gallery-video-item .gallery-social p { color: #ccc; }
 @media (max-width: 480px) { .gallery-videos { grid-template-columns: 1fr; } }

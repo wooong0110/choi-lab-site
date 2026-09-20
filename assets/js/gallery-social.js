@@ -1,5 +1,6 @@
 (function () {
-  window.createGallerySocial = function () {
+  window.createGallerySocial = function (options) {
+    options = options || {};
     var api = window.GALLERY_API;
     var panel = make('section', 'gallery-social');
     var current = null;
@@ -10,10 +11,16 @@
     var states = new Map();
     var like = make('button', 'gallery-like');
     like.type = 'button';
-    var hint = make('span', 'gallery-like-hint');
     var row = make('div', 'gallery-like-row');
-    row.append(like, hint);
-    var heading = make('h3');
+    var heading = make(options.collapsed ? 'button' : 'h3', 'gallery-comment-heading');
+    if (options.collapsed) { heading.type = 'button'; heading.setAttribute('aria-expanded', 'false'); }
+    row.append(like, heading);
+    var discussion = make('div', 'gallery-discussion');
+    discussion.hidden = !!options.collapsed;
+    if (options.collapsed) heading.addEventListener('click', function () {
+      discussion.hidden = !discussion.hidden;
+      heading.setAttribute('aria-expanded', String(!discussion.hidden));
+    });
     var status = make('p', 'gallery-social-status');
     status.setAttribute('role', 'status');
     var form = make('form', 'gallery-comment-form');
@@ -26,13 +33,14 @@
     var bodyLabel = make('label');
     var bodyText = make('span');
     var body = make('textarea');
-    body.name = 'comment'; body.maxLength = 1000; body.required = true; body.rows = 2;
+    body.name = 'comment'; body.maxLength = 1000; body.required = true; body.rows = 1;
     bodyLabel.append(bodyText, body);
     var submit = make('button'); submit.type = 'submit';
     form.append(nameLabel, bodyLabel, submit);
     var list = make('div', 'gallery-comments');
     var more = make('button', 'gallery-comments-more'); more.type = 'button'; more.hidden = true;
-    panel.append(row, heading, form, status, list, more);
+    discussion.append(form, status, list, more);
+    panel.append(row, discussion);
 
     function make(tag, cls, text) {
       var el = document.createElement(tag);
@@ -57,7 +65,8 @@
     function drawLikes() {
       if (!current) return;
       var value = state(current);
-      like.textContent = '♥ ' + tr('좋아요', 'Like') + ' ' + (value.likes === null ? '—' : value.likes + value.queue.length);
+      like.textContent = '♥ ' + (value.likes === null ? '—' : value.likes + value.queue.length);
+      like.setAttribute('aria-label', tr('좋아요 추가', 'Add a like'));
       like.disabled = value.likes === null;
     }
     function renderComments(comments, append) {
@@ -146,8 +155,8 @@
         list.replaceChildren(); more.hidden = true; nextCursor = null;
         heading.textContent = tr('댓글', 'Comments'); nameText.textContent = tr('닉네임', 'Nickname');
         bodyText.textContent = tr('댓글 내용', 'Comment'); submit.textContent = tr('등록', 'Post');
+        name.placeholder = tr('닉네임', 'Nickname'); body.placeholder = tr('댓글 남기기…', 'Add a comment…');
         more.textContent = tr('이전 댓글 더 보기', 'Load older comments');
-        hint.textContent = tr('좋아요는 여러 번 누를 수 있어요.', 'Tap as many times as you like.');
         message(tr('불러오는 중…', 'Loading…')); drawLikes();
         void load(false);
       },
