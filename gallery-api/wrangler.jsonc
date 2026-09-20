@@ -6,6 +6,6 @@
   "compatibility_flags": ["nodejs_compat"],
   "workers_dev": true,
   "observability": { "enabled": true, "head_sampling_rate": 0.1 },
-  "vars": { "ALLOWED_ORIGIN": "https://wooong0110.github.io" },
+  "vars": { "ALLOWED_ORIGIN": "https://wooong0110.github.io,https://choi-dds.knu.ac.kr" },
   "d1_databases": [{ "binding": "DB", "database_name": "choi-lab-gallery", "database_id": "71a2d592-ddf6-4a96-b1eb-a0ea1e39a7a3" }]
 }

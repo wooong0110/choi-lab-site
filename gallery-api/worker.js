@@ -21,14 +21,15 @@ async function readBody(request) {
 export default {
   async fetch(request, env) {
     const origin = request.headers.get('Origin');
+    const allowedOrigins = env.ALLOWED_ORIGIN.split(',').map(value => value.trim());
     const headers = { 'Content-Type': 'application/json', 'Cache-Control': 'no-store', 'Vary': 'Origin' };
-    if (origin === env.ALLOWED_ORIGIN) {
+    if (allowedOrigins.includes(origin)) {
       headers['Access-Control-Allow-Origin'] = origin;
       headers['Access-Control-Allow-Methods'] = 'GET, POST, OPTIONS';
       headers['Access-Control-Allow-Headers'] = 'Content-Type';
     }
     const reply = (body, status = 200) => new Response(JSON.stringify(body), { status, headers });
-    if (origin && origin !== env.ALLOWED_ORIGIN) return reply({ error: 'Origin not allowed' }, 403);
+    if (origin && !allowedOrigins.includes(origin)) return reply({ error: 'Origin not allowed' }, 403);
     if (request.method === 'OPTIONS') return new Response(null, { status: 204, headers });
     const url = new URL(request.url);
     if (!['/photo', '/like', '/comment'].includes(url.pathname)) return reply({ error: 'Not found' }, 404);
