@@ -14,6 +14,28 @@
  */
 window.GALLERY = [
   {
+    "date": "2026-09-20",
+    "title": "Jiwoong alone trip in Seoul",
+    "body": [],
+    "images": [
+      "assets/img/gallery/260920/IMG_0339.jpg",
+      "assets/img/gallery/260920/IMG_0343.jpg",
+      "assets/img/gallery/260920/IMG_0351.jpg",
+      "assets/img/gallery/260920/IMG_0354.jpg",
+      "assets/img/gallery/260920/IMG_0360.jpg",
+      "assets/img/gallery/260920/IMG_0363.jpg",
+      "assets/img/gallery/260920/IMG_0365.jpg",
+      "assets/img/gallery/260920/IMG_0372.jpg",
+      "assets/img/gallery/260920/IMG_0373.jpg"
+    ],
+    "videos": [
+      {
+        "src": "assets/img/gallery/260920/IMG_0347.mp4",
+        "poster": "assets/img/gallery/260920/IMG_0347-poster.jpg"
+      }
+    ]
+  },
+  {
     "date": "2026-09-18",
     "title": "SooYeon's alone trip in Gongju (Our Photomanager)",
     "body": [],
