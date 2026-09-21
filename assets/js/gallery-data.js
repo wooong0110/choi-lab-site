@@ -23,7 +23,8 @@ window.GALLERY = [
       "assets/img/gallery/260921/IMG_0384.jpg",
       "assets/img/gallery/260921/IMG_0394.jpg",
       "assets/img/gallery/260921/IMG_0395.jpg",
-      "assets/img/gallery/260921/IMG_0398.jpg"
+      "assets/img/gallery/260921/IMG_0398.jpg",
+      "assets/img/gallery/260921/student-feedback.png"
     ],
     "videos": [
       {
