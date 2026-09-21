@@ -20,17 +20,21 @@ test('repeated concurrent likes persist, retries do not duplicate, and photos st
   assert.equal((await get(other)).likes, second);
 });
 test('comments persist as plain text, retry safely, and paginate', async () => {
+  const startingCount = (await get()).commentCount;
   const prefix = randomUUID();
   const body = { photo, requestId: randomUUID(), name: "O'Neil", body: '<img src=x onerror=alert(1)> ' + prefix };
   assert.equal((await post('/comment', body)).status, 201);
   await post('/comment', body);
   let snapshot = await get();
+  assert.equal(snapshot.commentCount, startingCount + 1);
   assert.equal(snapshot.comments.filter(x => x.body === body.body).length, 1);
   for (let i = 0; i < 31; i++) await post('/comment', { ...body, requestId: randomUUID(), body: prefix + i });
   snapshot = await get();
   assert.equal(snapshot.comments.length, 30);
+  assert.equal(snapshot.commentCount, startingCount + 32);
   assert.ok(snapshot.next);
   const older = await get(photo, snapshot.next);
+  assert.equal(older.commentCount, snapshot.commentCount);
   assert.ok(older.comments.length >= 2);
   assert.ok(older.comments.every(x => x.id < snapshot.next));
 });

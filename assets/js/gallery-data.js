@@ -14,6 +14,25 @@
  */
 window.GALLERY = [
   {
+    "date": "2026-09-21",
+    "title": "Jik-Jang-In vibe & Apple Battle (Jiwoong gosu)",
+    "body": [],
+    "images": [
+      "assets/img/gallery/260921/IMG_0379.jpg",
+      "assets/img/gallery/260921/IMG_0381.jpg",
+      "assets/img/gallery/260921/IMG_0384.jpg",
+      "assets/img/gallery/260921/IMG_0394.jpg",
+      "assets/img/gallery/260921/IMG_0395.jpg",
+      "assets/img/gallery/260921/IMG_0398.jpg"
+    ],
+    "videos": [
+      {
+        "src": "assets/img/gallery/260921/IMG_0388.mp4",
+        "poster": "assets/img/gallery/260921/IMG_0388-poster.jpg"
+      }
+    ]
+  },
+  {
     "date": "2026-09-20",
     "title": "Jiwoong alone trip in Seoul",
     "body": [],

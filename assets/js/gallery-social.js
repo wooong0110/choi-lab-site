@@ -41,7 +41,8 @@
     var more = make('button', 'gallery-comments-more'); more.type = 'button'; more.hidden = true;
     discussion.append(form, status, list, more);
     panel.append(row, discussion);
-    if (options.likeOnly) { heading.remove(); discussion.remove(); panel.classList.add('gallery-photo-reaction'); }
+    if (options.likeOnly) { heading.hidden = true; discussion.remove(); panel.classList.add('gallery-photo-reaction'); }
+    heading.dataset.compactCount = options.likeOnly ? 'true' : 'false';
 
     function make(tag, cls, text) {
       var el = document.createElement(tag);
@@ -67,6 +68,19 @@
       if (!current) return;
       like.dataset.galleryLike = current;
       updateLikes(current);
+      heading.dataset.galleryComments = current;
+      updateComments(current);
+    }
+    function updateComments(photo) {
+      var count = state(photo).commentCount;
+      var labels = Array.from(document.querySelectorAll('[data-gallery-comments]')).filter(function (label) { return label.dataset.galleryComments === photo; });
+      if (current === photo && !labels.includes(heading)) labels.push(heading);
+      labels.forEach(function (label) {
+        var compact = label.dataset.compactCount === 'true';
+        label.hidden = compact && !count;
+        label.textContent = compact ? '💬 ' + (count || 0) : tr('댓글', 'Comments') + (count ? ' ' + count : '');
+        label.setAttribute('aria-label', tr('댓글 ', 'Comments: ') + (count || 0));
+      });
     }
     function updateLikes(photo) {
       var value = state(photo);
@@ -99,6 +113,7 @@
         if (stamp !== version) return;
         var value = state(photo);
         value.likes = Math.max(value.likes || 0, data.likes);
+        value.commentCount = data.commentCount;
         drawLikes(); renderComments(data.comments, append);
         nextCursor = data.next; more.hidden = !nextCursor;
         message('');
@@ -149,7 +164,9 @@
       }
       busyComment = true; submit.disabled = true;
       try {
-        await request('/comment', pendingComment);
+        var result = await request('/comment', pendingComment);
+        state(photo).commentCount = result.commentCount;
+        updateComments(photo);
         try { localStorage.setItem('gallery-nickname', nickname); } catch (e) {}
         if (stamp === version) { body.value = ''; pendingComment = null; await load(false); }
       } catch (error) {
@@ -172,7 +189,7 @@
         message(tr('불러오는 중…', 'Loading…')); drawLikes();
         void load(false);
       },
-      close: function () { version++; current = null; like.removeAttribute('data-gallery-like'); }
+      close: function () { version++; current = null; like.removeAttribute('data-gallery-like'); heading.removeAttribute('data-gallery-comments'); }
     };
   };
 })();
