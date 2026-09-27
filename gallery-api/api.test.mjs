@@ -38,6 +38,24 @@ test('comments persist as plain text, retry safely, and paginate', async () => {
   assert.ok(older.comments.length >= 2);
   assert.ok(older.comments.every(x => x.id < snapshot.next));
 });
+test('comment deletion requires its private creation key and is safe to retry', async () => {
+  const start = (await get()).commentCount;
+  const requestId = randomUUID();
+  const created = await (await post('/comment', { photo, requestId, name: 'Delete test', body: 'Remove me' })).json();
+  assert.ok(Number.isSafeInteger(created.id));
+  const payload = { photo, id: created.id, requestId };
+  assert.ok((await get()).comments.every(x => !('request_id' in x)));
+  await post('/comment/delete', { ...payload, requestId: randomUUID() });
+  await post('/comment/delete', { ...payload, photo: other });
+  assert.equal((await get()).commentCount, start + 1);
+  assert.equal((await post('/comment/delete', { ...payload, requestId: '' })).status, 400);
+  assert.equal((await post('/comment/delete', { ...payload, id: -1 })).status, 400);
+  assert.equal((await post('/comment/delete', payload, 'https://evil.example')).status, 403);
+  assert.equal((await (await post('/comment/delete', payload)).json()).commentCount, start);
+  assert.equal((await post('/comment/delete', payload)).status, 200);
+  assert.ok(!(await get()).comments.some(x => x.id === created.id));
+});
+
 test('rejects unknown photos, oversized input and foreign browser origins', async () => {
   assert.equal((await post('/like', { photo: 'unknown', requestId: randomUUID() })).status, 400);
   assert.equal((await post('/like', { photo, requestId: randomUUID() }, 'https://evil.example')).status, 403);

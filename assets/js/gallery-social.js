@@ -1,5 +1,15 @@
 (function () {
   var states = new Map();
+  var commentKeys = new Map();
+  function commentKey(id, value) {
+    var key = 'gallery-comment-key-' + id;
+    if (value) {
+      commentKeys.set(key, value);
+      try { localStorage.setItem(key, value); } catch (e) {}
+    }
+    try { return localStorage.getItem(key) || commentKeys.get(key); }
+    catch (e) { return commentKeys.get(key); }
+  }
   window.createGallerySocial = function (options) {
     options = options || {};
     var api = window.GALLERY_API;
@@ -100,6 +110,31 @@
         var time = make('time'); time.dateTime = comment.created_at;
         time.textContent = new Date(comment.created_at).toLocaleString(document.documentElement.lang);
         byline.append(make('strong', '', comment.name), time);
+        var token = commentKey(comment.id);
+        if (token) {
+          var remove = make('button', 'gallery-comment-delete', '×');
+          remove.type = 'button';
+          remove.title = tr('댓글 삭제', 'Delete comment');
+          remove.setAttribute('aria-label', comment.name + ': ' + remove.title);
+          var photo = current, stamp = version;
+          remove.addEventListener('click', async function (event) {
+            event.preventDefault(); event.stopPropagation();
+            if (remove.disabled) return;
+            remove.disabled = true;
+            try {
+              var result = await request('/comment/delete', { photo: photo, id: comment.id, requestId: token });
+              state(photo).commentCount = result.commentCount;
+              updateComments(photo);
+              if (stamp !== version) return;
+              item.remove();
+              if (!list.children.length) await load(false);
+              message(tr('댓글을 삭제했어요.', 'Comment deleted.'));
+            } catch (error) {
+              if (stamp === version) message(tr('삭제하지 못했어요. X 버튼을 눌러 다시 시도해주세요.', 'Could not delete. Press X to retry.'));
+            } finally { remove.disabled = false; }
+          });
+          byline.appendChild(remove);
+        }
         item.append(byline, make('p', '', comment.body));
         list.appendChild(item);
       });
@@ -163,8 +198,10 @@
         pendingComment = { photo: photo, name: nickname, body: text, requestId: crypto.randomUUID() };
       }
       busyComment = true; submit.disabled = true;
+      var submittedComment = pendingComment;
       try {
-        var result = await request('/comment', pendingComment);
+        var result = await request('/comment', submittedComment);
+        if (result.id) commentKey(result.id, submittedComment.requestId);
         state(photo).commentCount = result.commentCount;
         updateComments(photo);
         try { localStorage.setItem('gallery-nickname', nickname); } catch (e) {}

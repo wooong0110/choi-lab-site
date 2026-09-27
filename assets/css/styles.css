@@ -606,6 +606,11 @@ section { padding: 76px 0; }
 .gallery-comments { overflow-y: auto; min-height: 0; overscroll-behavior: contain; }
 .gallery-comment { border-top: 1px solid #444; padding: 6px 0; }
 .gallery-comment-byline { display: flex; flex-wrap: wrap; gap: 6px; font-size: 12px; }
+.gallery-comment-byline { align-items: center; }
+.gallery-social .gallery-comment-delete { margin-left: auto; min-width: 32px; min-height: 32px; padding: 0; border: 0; background: transparent; color: #bbb; font-size: 22px; line-height: 1; cursor: pointer; }
+.gallery-social .gallery-comment-delete:hover { color: #fff; background: #633; }
+.gallery-social .gallery-comment-delete:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.gallery-social .gallery-comment-delete:disabled { opacity: .45; cursor: wait; }
 .gallery-comment time { color: #aaa; font-size: 10px; }
 .gallery-comment p { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 12px; margin-top: 2px; }
 .gallery-no-comments { color: #bbb; font-size: 12px; }

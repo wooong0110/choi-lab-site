@@ -32,7 +32,7 @@ export default {
     if (origin && !allowedOrigins.includes(origin)) return reply({ error: 'Origin not allowed' }, 403);
     if (request.method === 'OPTIONS') return new Response(null, { status: 204, headers });
     const url = new URL(request.url);
-    if (!['/photo', '/like', '/comment'].includes(url.pathname)) return reply({ error: 'Not found' }, 404);
+    if (!['/photo', '/like', '/comment', '/comment/delete'].includes(url.pathname)) return reply({ error: 'Not found' }, 404);
     if (request.method !== (url.pathname === '/photo' ? 'GET' : 'POST')) return reply({ error: 'Method not allowed' }, 405);
     let input;
     try { input = request.method === 'GET' ? Object.fromEntries(url.searchParams) : await readBody(request); }
@@ -52,6 +52,15 @@ export default {
         return reply({ likes: stats.results[0]?.likes || 0, commentCount: count.results[0].total, comments: rows, next: comments.results.length > 30 ? rows[rows.length - 1].id : null });
       }
       if (!uuid.test(input.requestId)) return reply({ error: 'Invalid request ID' }, 400);
+      if (url.pathname === '/comment/delete') {
+        if (!Number.isSafeInteger(input.id) || input.id < 1) return reply({ error: 'Invalid comment ID' }, 400);
+        // The private creation UUID is a deletion capability, never exposed by /photo.
+        const results = await env.DB.batch([
+          env.DB.prepare('DELETE FROM comments WHERE id = ? AND photo = ? AND request_id = ?').bind(input.id, photo, input.requestId),
+          env.DB.prepare('SELECT COUNT(*) AS total FROM comments WHERE photo = ?').bind(photo)
+        ]);
+        return reply({ ok: true, commentCount: results[1].results[0].total });
+      }
       if (url.pathname === '/like') {
         const results = await env.DB.batch([
           env.DB.prepare('INSERT OR IGNORE INTO likes(request_id, photo) VALUES (?, ?)').bind(input.requestId, photo),
@@ -64,7 +73,8 @@ export default {
       if (!name || name.length > 40 || !body || body.length > 1000) return reply({ error: 'Invalid comment' }, 400);
       await env.DB.prepare('INSERT OR IGNORE INTO comments(request_id, photo, name, body) VALUES (?, ?, ?, ?)').bind(input.requestId, photo, name, body).run();
       const count = await env.DB.prepare('SELECT COUNT(*) AS total FROM comments WHERE photo = ?').bind(photo).first();
-      return reply({ ok: true, commentCount: count.total }, 201);
+      const comment = await env.DB.prepare('SELECT id FROM comments WHERE request_id = ? AND photo = ?').bind(input.requestId, photo).first();
+      return reply({ ok: true, id: comment?.id, commentCount: count.total }, 201);
     } catch (error) {
       console.error(JSON.stringify({ event: 'gallery_api_error', message: error.message }));
       return reply({ error: 'Please try again later' }, 503);

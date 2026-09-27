@@ -29,6 +29,8 @@ Set the resulting Worker URL in `assets/js/gallery-social-config.js`, then publi
 
 ## Moderation
 
+New comments show an × button in the browser that posted them. Clicking it deletes immediately and updates the count. The browser retains the private creation UUID in localStorage; `/comment/delete` requires that UUID, comment ID, and matching photo. Public comment listings never expose the UUID. Older comments and comments from another browser still require owner moderation below. Clearing browser storage removes access to these buttons. Deploy the Worker and static assets together; no database migration is needed.
+
 The owner can review and remove unwanted comments using the Cloudflare D1 console for `choi-lab-gallery`. Review IDs before deleting a specific row:
 
 ```sql

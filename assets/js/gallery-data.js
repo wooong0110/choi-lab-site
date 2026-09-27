@@ -14,6 +14,31 @@
  */
 window.GALLERY = [
   {
+    "date": "2026-09-27",
+    "title": "Happy Chuseok in Seoul",
+    "body": [],
+    "images": [
+      "assets/img/gallery/260927/IMG_0542.jpg",
+      "assets/img/gallery/260927/IMG_0544.jpg",
+      "assets/img/gallery/260927/IMG_0575.jpg",
+      "assets/img/gallery/260927/IMG_0585.jpg",
+      "assets/img/gallery/260927/IMG_0586.jpg",
+      "assets/img/gallery/260927/IMG_0587.jpg",
+      "assets/img/gallery/260927/IMG_0588.jpg",
+      "assets/img/gallery/260927/IMG_0589.jpg",
+      "assets/img/gallery/260927/IMG_0590.jpg",
+      "assets/img/gallery/260927/IMG_0591.jpg",
+      "assets/img/gallery/260927/IMG_0592.jpg",
+      "assets/img/gallery/260927/IMG_0594.jpg",
+      "assets/img/gallery/260927/IMG_0595.jpg",
+      "assets/img/gallery/260927/IMG_0596.jpg",
+      "assets/img/gallery/260927/IMG_0597.jpg",
+      "assets/img/gallery/260927/IMG_0598.jpg",
+      "assets/img/gallery/260927/IMG_0599.jpg",
+      "assets/img/gallery/260927/IMG_0600.jpg"
+    ]
+  },
+  {
     "date": "2026-09-21",
     "title": "Jik-Jang-In vibe & Apple Battle (Jiwoong gosu)",
     "body": [],
