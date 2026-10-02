@@ -14,6 +14,35 @@
  */
 window.GALLERY = [
   {
+    "date": "2026-10-02",
+    "title": "I am angry",
+    "body": [],
+    "images": [
+      "assets/img/gallery/261002/IMG_0605.jpg",
+      "assets/img/gallery/261002/IMG_0618.jpg",
+      "assets/img/gallery/261002/IMG_0641.jpg",
+      "assets/img/gallery/261002/IMG_0642.jpg",
+      "assets/img/gallery/261002/IMG_0643.jpg",
+      "assets/img/gallery/261002/IMG_0650.jpg",
+      "assets/img/gallery/261002/IMG_0651.jpg",
+      "assets/img/gallery/261002/IMG_0654.jpg"
+    ],
+    "videos": [
+      {
+        "src": "assets/img/gallery/261002/clip-01.mp4",
+        "poster": "assets/img/gallery/261002/clip-01-poster.jpg"
+      },
+      {
+        "src": "assets/img/gallery/261002/clip-02.mp4",
+        "poster": "assets/img/gallery/261002/clip-02-poster.jpg"
+      },
+      {
+        "src": "assets/img/gallery/261002/IMG_0655.mp4",
+        "poster": "assets/img/gallery/261002/IMG_0655-poster.jpg"
+      }
+    ]
+  },
+  {
     "date": "2026-09-27",
     "title": "Happy Chuseok in Seoul",
     "body": [],
