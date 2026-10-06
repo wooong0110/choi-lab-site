@@ -17,7 +17,7 @@ Use a local API URL in `assets/js/gallery-social-config.js` when previewing; res
 
 ## Deploy and add photos
 
-After adding gallery photos or videos, run `node sync-photos.mjs` and deploy again so the API accepts the new media paths. Preserve paths to preserve their reactions.
+After adding gallery photos or videos, deploy again so the API accepts the new media paths. Wrangler automatically runs `node sync-photos.mjs` before each build or deploy to register the current gallery media. Preserve paths to preserve their reactions.
 
 ```sh
 npx wrangler login

@@ -2,6 +2,7 @@
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "choi-lab-gallery",
   "main": "worker.js",
+  "build": { "command": "node sync-photos.mjs" },
   "compatibility_date": "2026-09-18",
   "compatibility_flags": ["nodejs_compat"],
   "workers_dev": true,
