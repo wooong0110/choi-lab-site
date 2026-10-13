@@ -13,6 +13,50 @@
  * },
  */
 window.GALLERY = [
+{
+  "date": "2026-10-13",
+  "title": "I don't want to go Exosome-Party",
+  "body": [],
+  "images": [
+    "assets/img/gallery/261013/IMG_0601.jpg",
+    "assets/img/gallery/261013/IMG_0661.jpg",
+    "assets/img/gallery/261013/IMG_0679.jpg",
+    "assets/img/gallery/261013/IMG_0906.jpg",
+    "assets/img/gallery/261013/IMG_1309.jpg",
+    "assets/img/gallery/261013/IMG_1312.jpg",
+    "assets/img/gallery/261013/IMG_1334.jpg",
+    "assets/img/gallery/261013/IMG_1335.jpg",
+    "assets/img/gallery/261013/IMG_1338.jpg",
+    "assets/img/gallery/261013/IMG_1340.jpg",
+    "assets/img/gallery/261013/IMG_1369.jpg",
+    "assets/img/gallery/261013/IMG_1371.jpg",
+    "assets/img/gallery/261013/IMG_1372.jpg",
+    "assets/img/gallery/261013/IMG_1382.jpg",
+    "assets/img/gallery/261013/IMG_1383.jpg",
+    "assets/img/gallery/261013/IMG_1503.jpg",
+    "assets/img/gallery/261013/IMG_1506.jpg",
+    "assets/img/gallery/261013/IMG_1507.jpg",
+    "assets/img/gallery/261013/IMG_1508.jpg",
+    "assets/img/gallery/261013/IMG_1521.jpg",
+    "assets/img/gallery/261013/IMG_1526.jpg",
+    "assets/img/gallery/261013/IMG_1557.jpg",
+    "assets/img/gallery/261013/IMG_1560.jpg",
+    "assets/img/gallery/261013/IMG_1562.jpg",
+    "assets/img/gallery/261013/IMG_1564.jpg",
+    "assets/img/gallery/261013/IMG_1565.jpg",
+    "assets/img/gallery/261013/L1087789.jpg"
+  ],
+  "videos": [
+    {
+      "src": "assets/img/gallery/261013/clip-01.mp4",
+      "poster": "assets/img/gallery/261013/clip-01-poster.jpg"
+    },
+    {
+      "src": "assets/img/gallery/261013/clip-02.mp4",
+      "poster": "assets/img/gallery/261013/clip-02-poster.jpg"
+    }
+  ]
+},
   {
     "date": "2026-10-02",
     "title": "I am angry",
