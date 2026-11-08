@@ -14,6 +14,122 @@
  */
 window.GALLERY = [
 {
+  "date": "2026-11-08",
+  "title": "HaidiRao picnic",
+  "body": [],
+  "images": [
+    "assets/img/gallery/261108/IMG_1898.jpg",
+    "assets/img/gallery/261108/IMG_1905.jpg",
+    "assets/img/gallery/261108/IMG_1906.jpg",
+    "assets/img/gallery/261108/IMG_1907.jpg",
+    "assets/img/gallery/261108/IMG_1908.jpg",
+    "assets/img/gallery/261108/IMG_1909.jpg",
+    "assets/img/gallery/261108/IMG_1910.jpg",
+    "assets/img/gallery/261108/IMG_1911.jpg",
+    "assets/img/gallery/261108/IMG_1912.jpg",
+    "assets/img/gallery/261108/IMG_1913.jpg",
+    "assets/img/gallery/261108/IMG_1914.jpg",
+    "assets/img/gallery/261108/IMG_1915.jpg",
+    "assets/img/gallery/261108/IMG_1916.jpg",
+    "assets/img/gallery/261108/IMG_1917.jpg"
+  ],
+  "videos": [
+    {
+      "src": "assets/img/gallery/261108/clip-01.mp4",
+      "poster": "assets/img/gallery/261108/clip-01-poster.jpg"
+    },
+    {
+      "src": "assets/img/gallery/261108/clip-02.mp4",
+      "poster": "assets/img/gallery/261108/clip-02-poster.jpg"
+    },
+    {
+      "src": "assets/img/gallery/261108/clip-03.mp4",
+      "poster": "assets/img/gallery/261108/clip-03-poster.jpg"
+    },
+    {
+      "src": "assets/img/gallery/261108/clip-04.mp4",
+      "poster": "assets/img/gallery/261108/clip-04-poster.jpg"
+    }
+  ]
+},
+{
+  "date": "2026-11-07",
+  "title": "Seoul picnic",
+  "body": [],
+  "images": [
+    "assets/img/gallery/261107/IMG_1574.jpg",
+    "assets/img/gallery/261107/IMG_1577.jpg",
+    "assets/img/gallery/261107/IMG_1585.jpg",
+    "assets/img/gallery/261107/IMG_1590.jpg",
+    "assets/img/gallery/261107/IMG_1591.jpg",
+    "assets/img/gallery/261107/IMG_1597.jpg",
+    "assets/img/gallery/261107/IMG_1598.jpg",
+    "assets/img/gallery/261107/IMG_1610.jpg",
+    "assets/img/gallery/261107/IMG_1621.jpg",
+    "assets/img/gallery/261107/IMG_1636.jpg",
+    "assets/img/gallery/261107/IMG_1653.jpg",
+    "assets/img/gallery/261107/IMG_1779.jpg",
+    "assets/img/gallery/261107/IMG_1780.jpg",
+    "assets/img/gallery/261107/IMG_1820.jpg",
+    "assets/img/gallery/261107/IMG_1925.jpg",
+    "assets/img/gallery/261107/IMG_1927.jpg",
+    "assets/img/gallery/261107/IMG_1928.jpg",
+    "assets/img/gallery/261107/IMG_1931.jpg",
+    "assets/img/gallery/261107/IMG_1932.jpg",
+    "assets/img/gallery/261107/IMG_1933.jpg",
+    "assets/img/gallery/261107/IMG_1935.jpg",
+    "assets/img/gallery/261107/IMG_1936.jpg",
+    "assets/img/gallery/261107/IMG_1937.jpg",
+    "assets/img/gallery/261107/IMG_1938.jpg",
+    "assets/img/gallery/261107/IMG_1940.jpg",
+    "assets/img/gallery/261107/IMG_1941.jpg",
+    "assets/img/gallery/261107/B9D6D72A-0B3A-4CDC-B15D-80189CDD1EB2.jpg"
+  ]
+},
+{
+  "date": "2026-10-26",
+  "title": "Immune class picnic",
+  "body": [],
+  "images": [
+    "assets/img/gallery/261026/IMG_1700.jpg",
+    "assets/img/gallery/261026/IMG_1703.jpg",
+    "assets/img/gallery/261026/IMG_1726.jpg",
+    "assets/img/gallery/261026/IMG_1727.jpg",
+    "assets/img/gallery/261026/IMG_1733.jpg",
+    "assets/img/gallery/261026/IMG_1734.jpg",
+    "assets/img/gallery/261026/IMG_1738.jpg",
+    "assets/img/gallery/261026/IMG_1742.jpg",
+    "assets/img/gallery/261026/IMG_1744.jpg",
+    "assets/img/gallery/261026/IMG_1745.jpg",
+    "assets/img/gallery/261026/IMG_1750.jpg",
+    "assets/img/gallery/261026/IMG_1752.jpg",
+    "assets/img/gallery/261026/IMG_1755.jpg",
+    "assets/img/gallery/261026/IMG_1757.jpg",
+    "assets/img/gallery/261026/IMG_1758.jpg",
+    "assets/img/gallery/261026/IMG_1787.jpg",
+    "assets/img/gallery/261026/IMG_1795.jpg",
+    "assets/img/gallery/261026/A694E37E-D60C-4A89-AEAF-21E07C4822AE.jpg"
+  ],
+  "videos": [
+    {
+      "src": "assets/img/gallery/261026/clip-01.mp4",
+      "poster": "assets/img/gallery/261026/clip-01-poster.jpg"
+    },
+    {
+      "src": "assets/img/gallery/261026/clip-02.mp4",
+      "poster": "assets/img/gallery/261026/clip-02-poster.jpg"
+    },
+    {
+      "src": "assets/img/gallery/261026/clip-03.mp4",
+      "poster": "assets/img/gallery/261026/clip-03-poster.jpg"
+    },
+    {
+      "src": "assets/img/gallery/261026/clip-04.mp4",
+      "poster": "assets/img/gallery/261026/clip-04-poster.jpg"
+    }
+  ]
+},
+{
   "date": "2026-10-13",
   "title": "I don't want to go Exosome-Party",
   "body": [],
